@@ -1,0 +1,31 @@
+.container {
+    width: 100%;
+    box-sizing: border-box;
+    
+    &--vertical-padding {
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: $breakpoint-s) {
+    .container {
+        &--vertical-padding {
+            padding-top: 40px;
+            padding-bottom: 70px;
+        }
+    }
+}
+@media screen and (min-width: $breakpoint-m) {
+    .container {
+        &--vertical-padding {
+            padding-top: 60px;
+            padding-bottom: 120px;
+        }
+    }
+}
+@media screen and (min-width: $breakpoint-xl) {
+    .container {
+        max-width: calc( #{$breakpoint-xl} - 60px );
+        margin: 0 auto;
+    }
+}

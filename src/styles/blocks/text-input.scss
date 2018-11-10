@@ -1,0 +1,175 @@
+.text-input {
+    margin-bottom: $font-size-xxx-large;
+    color: inherit;
+
+    &--error {
+        // .text-input__field {
+        //     background-color: rgba($color-error, .4);
+        // }
+        /*.text-input__field {
+            &::after {
+                content: '!';
+                color: $color-error;
+                position: absolute;
+                right: 0; bottom: -22px;
+            }
+        }*/
+        .text-input__message {
+            transform: scale(1);
+        }
+    }
+
+    &--checkbox {
+        margin-bottom: $font-size-regular;
+
+        .text-input__field-icon {
+            margin-right: 6px;
+            transition: color .25s ease;
+            &:before {
+                content: "\f0c8"; // content: "\f14a";
+            }
+        }
+        input[type="checkbox"] {
+            display: none;
+        }
+        input:checked ~ .text-input__field-icon {
+            // font-weight: 400;
+            &:before {
+                content: "\f14a";
+            }
+        }
+    }
+
+    &--radio {
+        margin-bottom: $font-size-regular;
+
+        .text-input__label {
+            margin-bottom: $font-size-xx-small;
+        }
+        .text-input__field-icon {
+            margin-right: 6px;
+            transition: color .25s ease;
+            &:before {
+                content: "\f111";
+            }
+        }
+        input[type="radio"] {
+            display: none;
+        }
+        input:checked ~ .text-input__field-icon {
+            // font-weight: 400;
+            &:before {
+                content: "\f192";
+            }
+        }
+    }
+    &__name {
+        margin-bottom: $font-size-small;
+        color: inherit;
+        text-align: left;
+        font-size: $font-size-large;
+        font-weight: 300;    
+    }
+
+    &__label {
+        position: relative;
+        display: block;
+        width: 100%;
+        color: inherit;
+        text-align: left;
+        font-size: $font-size-large;
+        font-weight: 300;     
+    }
+    &__field {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 6px 8px 6px 0;
+        font-size: $font-size-large;
+        font-weight: 300;
+        color: inherit;
+        text-align: left;
+        line-height: 1.6;
+        background: none;
+        border: none;
+        border: 0px solid $color-text-primary-inverse;
+        border-bottom-width: 1px;
+        outline: none;
+
+        &::placeholder {
+            color: rgba($color-text-primary-inverse, .6);
+        }
+
+        &--dark-border {
+            border-color: $color-background-primary;
+
+            &::placeholder {
+                color: rgba($color-text-primary, .6);
+            }
+        }
+
+        &--fw-normal {
+            font-weight: normal;
+        }
+        
+        &--area {
+            margin-top: $font-size-small;
+            resize:vertical;
+        }
+        &--one-line {
+            display: inline-block;
+            width: auto;
+            max-width: 40%;
+            padding-right: 0;
+        } 
+    }
+    &__message {
+        position: absolute;
+        left: 0; bottom: -26px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 4px 10px;
+        background-color: $color-error;
+        font-size: $font-size-medium;
+        font-weight: normal;
+        color: $color-text-primary-inverse;     
+        transform: scale(0);
+        transform-origin: 10px 0;
+        transition: transform .3s ease;
+        white-space: nowrap;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -5px; left: 10px;
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: inherit;
+            transform: rotate(45deg);
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-l) {
+    .text-input {
+        margin-bottom: $font-size-x-large;
+        &__name {
+            font-size: $font-size-medium;
+        }
+        &__label {
+            font-size: $font-size-medium;
+        }
+        &__field {
+            font-size: $font-size-medium;
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-xl) {
+    .text-input{
+        &__message {
+            font-size: $font-size-regular;
+        }
+    }
+}

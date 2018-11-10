@@ -1,0 +1,272 @@
+.card-info {
+    background-color: $color-background-primary-inverse;
+    color: $color-text-primary-weak;
+    box-shadow: 
+        -10px 2px 10px 0px rgba(0,0,0,0.15),
+        10px 2px 10px 0px rgba(0,0,0,0.15);
+
+    &__header {
+        background: $color-background-variation-medium;
+        padding: $font-size-large $inner-container-padding;
+
+        
+        font-size: $font-size-x-large;
+
+        color: $color-text-primary-inverse;
+
+        &-vacancy {
+            margin-bottom: 0.7em;
+            &-position {
+                margin: 0;
+                margin-bottom: 0.35em;
+                font-size: $font-size-x-large;
+                font-weight: normal;
+            }
+            &-company {
+                margin: 0;
+                font-size: $font-size-large;
+                font-weight: bold;
+
+                a {                    
+                    color: inherit;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        &-salary {
+            &-amount {
+                margin: 0;
+                font-size: 0;
+
+                &-number {      
+                    display: inline-block;
+                    font-size: $font-size-large;
+                    font-weight: normal;
+                }
+                &-currency {
+                    display: inline-block;
+                    margin-left: 4px;
+                    font-size: calc( #{$font-size-large} - 2px);
+                    font-weight: normal;
+                }
+            }
+        }
+    } // end of header
+
+    &__content {
+        padding: $inner-container-padding-top-x-large $inner-container-padding $inner-container-padding-bottom-small;
+    }
+    &__description {
+        margin-bottom: $font-size-large;
+        &--is-active {
+            .card-info__description-text {
+                height: auto;
+                &::after {
+                    opacity: 0;
+                }
+            }
+        }
+        &-text {
+            position: relative;
+            height: calc( #{$font-size-medium} * 3.6);
+            overflow: hidden;
+            font-size: $font-size-medium;
+            font-weight: normal;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,1) 100%);;
+                opacity: 1;
+                transition: opacity .4s ease;
+            }
+
+            p:first-of-type, ul:first-of-type {
+                margin-top: 0;
+            }
+            p:last-of-type, ul:last-of-type {
+                margin-bottom: 0;
+            }
+        }        
+    }
+    &__action-buttons {
+            position: relative;
+            min-height: $font-size-medium;
+            font-size: $font-size-small;
+            font-weight: 300;
+            color: $color-text-variation-medium;
+        }
+
+    &__conditions {
+        margin-bottom: $font-size-x-large;
+        &-heading {
+            margin-bottom: $font-size-medium;
+        }
+        &-list {
+            margin: 0;
+            padding: 0;
+
+            &-item {
+                font-size: 0;
+                margin-bottom: $font-size-small;
+                display: flex;
+                align-items: center;
+
+                .fal {
+                    width: $font-size-xx-large;
+                    text-align: center;
+                    font-size: $font-size-large;
+                    color: $color-text-variation-medium;
+                }
+                &-text {
+                    margin-left: $font-size-x-small;
+                    font-size: $font-size-regular;
+                }
+            }
+        }
+    }
+    &__comment {
+        margin-bottom: $font-size-large;
+        &--is-active {
+            .card-info__comment-text {
+                height: auto;
+                &::after {
+                    opacity: 0;
+                }
+            }
+        }
+        &-text {
+            position: relative;
+            height: calc( #{$font-size-medium} * 3.6);
+            overflow: hidden;
+            font-size: $font-size-medium;
+            font-weight: normal;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,1) 100%);
+                opacity: 1;
+                transition: opacity .4s ease;
+            }
+
+            p:first-of-type, ul:first-of-type {
+                margin-top: 0;
+            }
+            p:last-of-type, ul:last-of-type {
+                margin-bottom: 0;
+            }
+        }        
+    }
+
+    &__footer {
+        padding-bottom: $inner-container-padding-bottom-large;
+        &-buttons-container {
+            text-align: center;
+            padding: $font-size-large $inner-container-padding;
+            
+            .button + .button {
+                margin-left: $font-size-medium;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-m) {
+    .card-info {
+        &__header {     
+            display: flex;
+            justify-content: space-between;
+
+            &-salary {
+                &-amount {
+                    &-number {
+                        font-size: $font-size-x-large;
+                    }
+                    &-currency {
+                        font-size: $font-size-x-large;
+                    }
+                }
+            }
+        }
+
+        &__content {
+            display: grid;
+            grid-template-columns: auto max-content;
+            grid-column-gap: 80px; column-gap: 80px;
+            grid-template-areas: 
+            "comment conditions"
+            "info conditions";
+        
+            & > :nth-child(1) {
+                grid-area: comment;
+            }
+            & > :nth-child(2) {
+                grid-area: conditions;
+            }
+            & > :nth-child(3) {
+                grid-area: info;
+        } 
+
+            &--column {
+                grid-template-columns: minmax(auto, 500px);
+                grid-column-gap: unset;
+            }
+
+        }
+
+        &__description {
+            //max-width: 500px;
+            &-text {
+                height: auto;
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        &__action-buttons {
+            display: none;
+        }
+        &__conditions {
+            //max-width: 300px;
+            &-list {
+                &-item {
+                    .fal {
+                        width: $font-size-x-large;
+                    }
+                    &-text {
+                        margin-left: $font-size-medium;
+                    }
+                }
+            }
+        }
+
+        &__comment {
+            //max-width: 500px;
+
+            &-text {
+                height: auto;
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-l) {
+    .card-info {
+        &__content {
+            grid-column-gap: 200px; column-gap: 200px;
+
+        }
+    }
+}

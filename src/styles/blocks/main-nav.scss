@@ -1,0 +1,37 @@
+.main-nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 56px;
+    box-sizing: border-box;
+    padding: 0 $inner-container-padding;
+    padding-top: $inner-container-padding-top;
+    padding-bottom: $inner-container-padding-bottom;
+    
+    box-shadow: 0 16px 32px rgba(0,0,0,0.15);
+
+    background-color: $color-background-primary;
+
+    &__logo-container {
+        width: 36px;
+        height: 36px;
+        font-size: 8px;
+        text-decoration: inherit;
+        outline: none;
+    }
+}
+
+@media screen and (min-width: $breakpoint-m) {
+    .main-nav {
+        position: relative;
+        box-shadow: none;
+    }
+}
+@media screen and (min-width: $breakpoint-xl) {
+    .main-nav {        
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

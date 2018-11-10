@@ -1,0 +1,58 @@
+.sign {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: $inner-container-padding-top-x-large $inner-container-padding-large;
+    background: transparent;
+
+    &--bg-variation-light {
+        background-color: $color-background-variation-light;
+    }
+    &--bg-variation-medium {
+        background-color: $color-background-variation-medium;
+    }
+    &--bg-variation-dark-weak {
+        background-color: $color-background-variation-dark;
+    }
+
+    &__logo-container {
+        display: block;
+        width: 50px;
+        height: 50px;
+        margin: 0 auto;
+        margin-bottom: $font-size-xx-large;
+        text-decoration: none;
+        font-size: 12px;
+    }
+    &__label-text {
+        padding: 4px 0;
+        margin-top: $font-size-x-large;
+        margin-bottom: $font-size-regular;
+        text-align: center;
+        font-size: $font-size-medium;
+    }
+}
+
+@media screen and (min-width: $breakpoint-s) {
+    .sign {
+        max-width: 480px;
+        padding-bottom: 80px;
+    }
+}
+@media screen and (min-width: $breakpoint-m) {
+    .sign {
+        max-width: 500px;
+        padding-bottom: 90px;
+    }
+}
+@media screen and (min-width: $breakpoint-l) {
+    .sign {
+        max-width: 500px;
+        padding-top: 40px;
+        padding-bottom: 60px;
+
+        &__logo-container {
+            margin-bottom: $font-size-medium;
+        }
+    }
+}

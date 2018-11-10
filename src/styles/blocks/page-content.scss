@@ -1,0 +1,39 @@
+.page-content {
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 56px;
+    padding-bottom: 120px;
+    flex: 1 1 auto;
+
+    transition: opacity .4s ease;
+
+    &--background {
+        background: $color-background-primary;
+    }
+
+    &--vertical-fields {
+        padding: 0;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    &--bg-variation-light {
+        background-color: $color-background-variation-light;
+    }
+    &--bg-variation-medium {
+        background-color: $color-background-variation-medium;
+    }
+    &--bg-variation-dark {
+        background-color: $color-background-variation-dark;
+    }
+}
+
+@media screen and (min-width: $breakpoint-s) {
+    .page-content{
+        &--background {
+            background-image: linear-gradient(30deg, rgba(105, 199, 173, .63), rgba(254, 213, 134, .3)), url('./static-assets/img/index-background.png');
+            background-size: cover;
+            background-position: center;
+        }
+    }
+}

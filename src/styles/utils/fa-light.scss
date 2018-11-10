@@ -1,0 +1,17 @@
+/*!
+ * Font Awesome Pro 5.3.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license (Commercial License)
+ */
+
+$path: 'static-assets/fonts/';
+
+@font-face {
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: url($path + "fa-light-300.eot");
+  src: url($path + "fa-light-300.eot?#iefix") format("embedded-opentype"), url($path + "fa-light-300.woff2") format("woff2"), url($path + "fa-light-300.woff") format("woff"), url($path + "fa-light-300.ttf") format("truetype"), url($path + "fa-light-300.svg#fontawesome") format("svg"); }
+
+.fal {
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 300; }

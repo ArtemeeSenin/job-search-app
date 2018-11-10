@@ -1,0 +1,31 @@
+.logo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: $color-background-variation-light;
+    color: $color-text-primary-inverse;    
+    border-radius: 100%;
+    font-family: $font-family-primary;
+    font-size: inherit;
+    text-align: center;
+    text-decoration: inherit;
+
+    &__line-top {
+        width: 100%;
+        font-size: 1.2em;
+        font-weight: bold;        
+        text-decoration: inherit;
+    }
+    &__line-bottom {
+        font-size: 0.8em;
+        width: 100%;
+        text-decoration: inherit;
+    }
+
+    &--inverse {
+        background-color: $color-background-primary;
+    }
+}

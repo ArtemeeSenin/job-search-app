@@ -1,0 +1,147 @@
+.vacancy-summary {
+
+    &--candidate {
+        background-color: rgba($color-warning, .05);
+    }
+    &--offer {
+        background-color: rgba($color-info-ok, .05);
+    }
+    &--declined {
+        background-color: rgba($color-error, .05);
+    }
+    &--not-suitable {
+        background-color: rgba($color-info, .05);
+    }
+
+    .fal, .fas, .fa {
+        text-align: center;
+        font-size: $font-size-regular;
+        width: $font-size-large;
+    }
+
+    &__position {
+        margin-bottom: 14px;
+        &-name {
+            margin: 0;
+            font-size: $font-size-large;
+            font-weight: normal;
+            margin-bottom: $font-size-small;
+        }
+        &-company {
+            font-size: $font-size-medium;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 0;
+        }   
+    }
+
+    &__salary {
+        font-size: $font-size-large;
+        font-weight: normal;
+        margin-top: 0;
+        margin-bottom: $font-size-small;
+    }
+    &__info-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: $font-size-regular;
+
+        &-item {
+            margin-bottom: $font-size-x-small;
+
+            // &:last-child {
+            //     margin-bottom: 0;
+            // }
+
+            .fal, .fas, .fa {
+                color: $color-text-variation-medium;
+            }
+        }
+    }
+    &__conditions {
+        &-status {
+            &-container {
+                margin: $font-size-regular 0;
+            }
+        }
+    }
+    &__status {
+        margin: 14px 0;
+        font-size: $font-size-medium;
+
+        &-icon {
+            &--candidate {
+                color: $color-warning;
+            }
+            &--offer {
+                color: $color-info-ok;
+            }
+            &--declined {
+                color: $color-error;
+            }
+            &--not-suitable {
+                color: $color-info;
+            }
+        }        
+    }
+    &__requirements {
+        margin-bottom: $font-size-medium;
+    }
+    &__link {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            color: $color-info-variation;
+        }
+        &:active {
+            color: $color-info;
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-s) {
+    .vacancy-summary {
+
+        &__position {
+            &-name {
+                margin-bottom: $font-size-regular;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-m) {
+    .vacancy-summary {
+        display: grid;
+        grid-template-columns: 72% 25%;
+        grid-template-columns: minmax(480px, 72%) minmax(180px, 25%);
+        grid-column-gap: 3%;
+        grid-template-areas: 
+            "position conditions"
+            "info conditions";
+        
+        & > :nth-child(1) {
+            grid-area: position;
+        }
+        & > :nth-child(2) {
+            grid-area: conditions;
+        }
+        & > :nth-child(3) {
+            grid-area: info;
+        }        
+    }
+}
+
+@media screen and (min-width: $breakpoint-xl) {
+    .vacancy-summary {
+
+        &__position {
+            &-name {
+                line-height: 1;
+                font-size: $font-size-large;
+            }
+        }
+    }
+}

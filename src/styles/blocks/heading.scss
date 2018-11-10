@@ -1,0 +1,64 @@
+.heading {
+    margin-top: 0;
+    font-family: $font-family-primary;
+    font-weight: bold;
+    line-height: 1;
+    color: $color-text-primary-weak;
+
+    &--xx-small {
+        font-size: $font-size-xx-small;
+    }
+    &--x-small {
+        font-size: $font-size-x-small;
+    }
+    &--smal {
+        font-size: $font-size-small;
+    }
+    &--regular {
+        font-size: $font-size-regular;
+    }
+    &--medium {
+        font-size: $font-size-medium;
+    }
+    &--large {
+        font-size: $font-size-large;
+    }
+    &--x-large {
+        font-size: $font-size-x-large;
+    }
+    &--xx-large {
+        font-size: $font-size-xx-large;
+    }
+    &--xxx-large {
+        font-size: $font-size-xxx-large;
+    }
+    &--light {
+        font-weight: 300;
+    }
+    &--normal {
+        font-weight: normal;
+    }
+    &--bold {
+        font-weight: bold;
+    }
+    &--text-center {
+        text-align: center;
+    }
+
+    &--color-inverse {
+        color: $color-text-primary-inverse;
+    }
+}
+
+@media screen and (min-width: $breakpoint-xl) {
+    .heading {
+        font-weight: normal;
+
+        &--light {
+            font-weight: 300;
+        }
+        &--normal {
+            font-weight: normal;
+        }
+    }
+}

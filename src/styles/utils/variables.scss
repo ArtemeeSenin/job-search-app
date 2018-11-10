@@ -1,0 +1,192 @@
+/* Layout */
+
+// Breakpoints
+$breakpoint-xs: 480px;
+$breakpoint-s: 576px;
+$breakpoint-m: 768px;
+$breakpoint-l: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 2160px;
+
+// Padding
+html {
+    --inner-container-padding: 10px;
+    --inner-container-padding-large: 20px;
+    --inner-container-padding-top: 10px;
+    --inner-container-padding-top-large: 18px;
+    --inner-container-padding-top-x-large: 26px;
+    --inner-container-padding-bottom: 10px;
+    --inner-container-padding-bottom-small: 4px;
+    --inner-container-padding-bottom-large: 18px;
+}
+
+$inner-container-padding: var(--inner-container-padding);
+$inner-container-padding-large: var(--inner-container-padding-large);
+$inner-container-padding-top: var(--inner-container-padding-top);
+$inner-container-padding-top-large: var(--inner-container-padding-top-large);
+$inner-container-padding-top-x-large: var(--inner-container-padding-top-x-large);
+$inner-container-padding-bottom: var(--inner-container-padding-bottom);
+$inner-container-padding-bottom-small: var(--inner-container-padding-bottom-small);
+$inner-container-padding-bottom-large: var(--inner-container-padding-bottom-large);
+
+@media screen and (min-width: $breakpoint-xs) {
+    html {        
+        --inner-container-padding-large: 70px;
+    }
+}
+@media screen and (min-width: $breakpoint-m) {
+    html {
+        --inner-container-padding: 20px;
+        --inner-container-padding-large: 86px;
+        --inner-container-padding-top-large: 20px;
+        --inner-container-padding-top-x-large: 32px;
+        --inner-container-padding-bottom-bottom-large: 20px;
+    }
+}
+@media screen and (min-width: $breakpoint-l) {
+    html {
+        --inner-container-padding: 40px;
+        --inner-container-padding-large: 100px;
+        --inner-container-padding-top-large: 30px;
+        --inner-container-padding-top-x-large: 60px;
+        --inner-container-padding-bottom-small: 6px;
+        --inner-container-padding-bottom-bottom-x-large: 32px;
+    }
+}
+@media screen and (min-width: $breakpoint-xl) {
+    html {
+        --inner-container-padding: 80px;
+        --inner-container-padding-large: 100px;
+        --inner-container-padding-bottom-small: 10px;
+        --inner-container-padding-bottom-bottom-large: 40px;
+    }
+}
+
+/* Colors */
+
+// Color set
+$east-bay: #505469;
+$medium-aquamarine: #69C7AD;
+$medium-aquamarine-light: #75D1B8;
+$fountain-blue: #4CABB1;
+$fountain-blue-light: #5CB8BE;
+$steel-blue: #4C78B1;
+$white: #fff;
+$night-rider: #333;
+$black: #000;
+
+$golden-glow: #fed586;
+$comet: #575b72;
+$chetwode-blue: #656dba;
+$wild-blue-yonder: #7183cd;
+$light-coral: #eb8585;
+
+// Basic
+$color-primary: $fountain-blue;
+$color-primary-dark: $night-rider;
+$color-primary-dark-weak: $east-bay;
+$color-primary-dark-weak-variation: $east-bay;
+
+// Utils
+$color-warning: $golden-glow;
+$color-error: $light-coral;
+$color-info: $comet;
+$color-info-ok: $medium-aquamarine;
+$color-info-variation: $chetwode-blue; 
+
+// Text
+$color-text-primary: $night-rider;
+$color-text-primary-weak: darken($east-bay, 12);
+$color-text-primary-inverse: $white;
+$color-text-primary-inverse-weak: darken($white, 5);
+$color-text-variation-medium: $fountain-blue;
+$color-text-muted: $comet;
+$color-text-info: $chetwode-blue;
+$color-text-error: $light-coral;
+$color-text-warning: $golden-glow;
+
+// Background
+$color-background-primary: $east-bay;
+$color-background-primary-inverse: $white;
+$color-background-variation-light: $medium-aquamarine;
+$color-background-variation-light-weak: $medium-aquamarine-light;
+$color-background-variation-medium: $fountain-blue;
+$color-background-variation-medium-weak: $fountain-blue-light;
+$color-background-variation-dark: $steel-blue;
+$color-background-variation-dark-weak: $wild-blue-yonder;
+
+
+/* Fonts */
+
+// Font families
+$font-family-primary: 'Segoe UI', 'Arial', 'Helvetica', 'Ubuntu', sans-serif;
+
+// Font size
+
+html {
+    --font-size-xx-small: 7px;
+    --font-size-x-small: 8px;
+    --font-size-small: 10px;
+    --font-size-regular: 12px;
+    --font-size-medium: 14px;
+    --font-size-large: 16px;
+    --font-size-x-large: 18px;
+    --font-size-xx-large: 22px;
+    --font-size-xxx-large: 28px;
+}
+
+$font-size-xx-small: var(--font-size-xx-small);
+$font-size-x-small: var(--font-size-x-small);
+$font-size-small: var(--font-size-small);
+$font-size-regular: var(--font-size-regular);
+$font-size-medium: var(--font-size-medium);
+$font-size-large: var(--font-size-large);
+$font-size-x-large: var(--font-size-x-large);
+$font-size-xx-large: var(--font-size-xx-large);
+$font-size-xxx-large: var(--font-size-xxx-large);
+
+@media screen and (min-width: $breakpoint-s){
+    html {
+        --font-size-xx-small: 8px;
+        --font-size-x-small: 10px;
+        --font-size-small: 12px;
+        --font-size-regular: 14px;
+        --font-size-medium: 16px;
+        --font-size-large: 18px;
+        --font-size-x-large: 22px;
+        --font-size-xx-large: 26px;
+        --font-size-xxx-large: 30px;
+    }
+}
+
+@media screen and (min-width: $breakpoint-l){
+    html {
+        --font-size-xx-small: 8px;
+        --font-size-x-small: 9px;
+        --font-size-small: 10px;
+        --font-size-regular: 14px;
+        --font-size-medium: 16px;
+        --font-size-large: 20px;
+        --font-size-x-large: 26px;
+        --font-size-xx-large: 34px;
+        --font-size-xxx-large: 42px;
+    }
+}
+
+@media screen and (min-width: $breakpoint-xl){
+    html {
+        --font-size-xx-small: 6px;
+        --font-size-x-small: 8px;
+        --font-size-small: 10px;
+        --font-size-regular: 14px;
+        --font-size-medium: 18px;
+        --font-size-large: 24px;
+        --font-size-x-large: 32px;
+        --font-size-xx-large: 48px;
+        --font-size-xxx-large: 54px;
+    }
+}
+
+// Font weight
+$font-weight-normal: normal;
+$font-weight-light: 300;

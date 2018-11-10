@@ -1,0 +1,34 @@
+.rating-table {
+    color: $color-text-primary-weak;
+    
+    &__table {
+        width: 100%;
+        max-width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        background-color: $color-background-primary-inverse;
+        box-shadow: 
+            -10px 2px 10px 0px rgba(0,0,0,0.15),
+            10px 2px 10px 0px rgba(0,0,0,0.15);
+    }
+
+    &__table-data {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 18px $inner-container-padding 24px;
+        border-bottom: 1px solid lighten($color-info, 35);
+    }
+}
+
+
+@media screen and (min-width: $breakpoint-xl) {
+    .rating-table {
+        max-width: 890px;
+
+        &__table-data {
+            padding-left: 60px;
+            padding-right: 54px;
+        }
+    }
+}

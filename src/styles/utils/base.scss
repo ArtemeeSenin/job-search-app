@@ -1,0 +1,28 @@
+html {
+    height: 100%;
+}
+body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 100%;
+    box-sizing: border-box;
+    background: $color-background-primary;
+    font-family: $font-family-primary;
+    font-weight: normal;
+    color: $color-text-primary-inverse;
+
+    &.is-menu-active {        
+        overflow: hidden;
+        .page-content {
+            opacity: .25;
+        }
+    }
+}
+
+#root {
+    height: 100%;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
