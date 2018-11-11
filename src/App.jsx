@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import NavMenu from './components/NavMenu'
+import NavMenu from './components/containers/NavMenu'
 import Rating from './components/Rating'
 
 class App extends Component {

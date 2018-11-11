@@ -1,6 +1,6 @@
 import React from 'react'
-import RatingFilters from './RatingFilters';
-import RatingTable from './RatingTable';
+import RatingFilters from './containers/RatingFilters';
+import RatingTable from './containers/RatingTable';
 
 const Rating = () => (
     <div className="rating">
