@@ -1,7 +1,6 @@
 import React from 'react'
 import { Field } from 'redux-form'
 import capitalize from 'capitalize'
-import { list } from 'postcss';
 
 export const Text = props => {
     const { label, placeholder, input, inputModifiers, type, meta } = props

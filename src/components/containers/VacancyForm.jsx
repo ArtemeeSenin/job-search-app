@@ -16,7 +16,7 @@ const links = [
 ]
 
 const toNumber = value => parseInt(value);
-const minutesToHours = value => Math.floor(value / 60)
+// const minutesToHours = value => Math.floor(value / 60)
 
 const VacancyForm = ({ data }) => (
     <article className="card-info">

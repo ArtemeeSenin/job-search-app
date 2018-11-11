@@ -1,4 +1,4 @@
-import React , { Fragment } from 'react'
+import React from 'react'
 import CardHeader from './containers/CardHeader'
 import CardContent from './containers/CardContent'
 import CardFooter from './containers/CardFooter'

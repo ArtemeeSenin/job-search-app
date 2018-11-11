@@ -4,9 +4,13 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux'
 import { reducer as formReducer } from 'redux-form'
-import logger from 'redux-logger'
+import { createLogger } from 'redux-logger'
 import './index.scss'
 import App from './App';
+
+const logger = createLogger({
+    collapsed: true
+});
 
 function vacancies (state = {}, action) {
     switch (action.type) {
@@ -54,20 +58,12 @@ const reducers = {
     vacancies
 }
 
-
 let store = createStore(
     combineReducers(reducers),
     initialState,
     composeWithDevTools(applyMiddleware(logger))
-    );
+);
 
-    // store.dispatch({
-        //     type: 'ADD_VACANCY',
-        //     data: {
-            //         name: 'hello'
-
-//     }
-// })
 ReactDOM.render(
     <Provider store={store}>
         <App />
@@ -75,4 +71,4 @@ ReactDOM.render(
     , document.getElementById('root')
 );
 
-store.dispatch({ type: 'FILL_IN_FORM', data: initialState.vacancies[0] })
+// store.dispatch({ type: 'FILL_IN_FORM', data: initialState.vacancies[0] })
