@@ -1,7 +1,7 @@
 import React from 'react'
 import CardHeader from './CardHeader'
 import CardFooter from './CardFooter'
-import { Field, Fields, reduxForm } from 'redux-form'
+import { Field } from 'redux-form'
 import { Text, Textarea, Checkbox, Radio } from '../fields'
 
 const links = [
@@ -16,6 +16,7 @@ const links = [
 ]
 
 const toNumber = value => parseInt(value);
+const minutesToHours = value => Math.floor(value / 60)
 
 const VacancyForm = ({ data }) => (
     <article className="card-info">
@@ -50,19 +51,19 @@ const VacancyForm = ({ data }) => (
                 name="workDay"
                 component={Text}
                 type="number"
-                label="Work day"
-                placeholder="Up to 1 hour"
+                label="Work day (min.)"
+                placeholder="The duration of the working day"
                 inputModifiers="text-input__field--dark-border text-input__field--fw-normal"
-                normalize={toNumber}
+                normalize={ toNumber }
             />
             <Field
                 name="inTheWay"
                 component={Text}
                 type="number"
-                label="In the way time"
+                label="In the way time (min.)"
                 placeholder="Minutes"
                 inputModifiers="text-input__field--dark-border text-input__field--fw-normal"
-                normalize={toNumber}
+                normalize={ toNumber }
             />
             <Field
                 name="description"
@@ -80,7 +81,7 @@ const VacancyForm = ({ data }) => (
                 label="Interesting"
             />
             <Field
-                name="requiresAdditionalStudying "
+                name="requiresAdditionalStudying"
                 component={ Checkbox }
                 type="checkbox"
                 label="Additional studying"
@@ -109,6 +110,4 @@ const VacancyForm = ({ data }) => (
         <CardFooter links={ links } />
     </article>
 );
-export default reduxForm({
-    form: 'vacancy'
-})(VacancyForm);
+export default VacancyForm;

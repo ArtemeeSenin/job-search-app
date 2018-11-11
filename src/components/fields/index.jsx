@@ -45,7 +45,7 @@ export const Textarea = props => {
 }
 
 export const Checkbox = props => {
-    const { label, input, inputModifiers, type, meta } = props
+    const { label, input, inputModifiers, type } = props
     return (
         <div className="text-input text-input--checkbox">
             <label className="text-input__label text-input__label--checkbox">
@@ -61,7 +61,6 @@ export const Checkbox = props => {
     )
 }
 const RadioButton = props => {
-    console.log(props)
     const { input, type, key } = props;
     return (
         <label className="text-input__label text-input__label" key={key}>
@@ -78,16 +77,16 @@ const RadioButton = props => {
 
 export const Radio = props => {
     const { label, name, list } = props;
-    console.log(props)
     return (
         <div className="text-input text-input--radio">
             <p className="text-input__name">{ label }</p>
-            {list.map( (field) => (
+            {list.map( (field, key) => (
                 <Field
                     type="radio"
                     name={name}
                     value={field}
                     component={RadioButton}
+                    key={key}
                 />
             ))}
 

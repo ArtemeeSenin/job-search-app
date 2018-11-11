@@ -8,18 +8,71 @@ import logger from 'redux-logger'
 import './index.scss'
 import App from './App';
 
-const reducers = {
-    form: formReducer
+function vacancies (state = {}, action) {
+    switch (action.type) {
+        case 'ADD_VACANCY':
+            return state.concat([action.data])
+        default:
+            return state;
+    }
 }
+const initialState = {
+    form: {},
+    vacancies: [
+        {
+            position: 'Senior front-end developer',
+            company: 'Epic Company',
+            companyId: 0,
+            salary: 100000,
+            status: 'offer',
+            workDay: 480,
+            inTheWay: 40,
+            isInteresting: true,
+            requiresAdditionalStudying: true,
+            description: 'World wide company',
+            commentary: 'This is a good company'
+        }
+    ]
+};
+const reducers = {
+    form: formReducer.plugin({
+        vacancy: (state, action) => {
+            switch(action.type){
+                case 'FILL_IN_FORM':
+                    return {
+                        ...state,
+                        values: {
+                            ...state.values,
+                            ...action.data
+                        }
+                    }
+                default:
+                    return state;
+            }
+        }
+    }),
+    vacancies
+}
+
 
 let store = createStore(
     combineReducers(reducers),
+    initialState,
     composeWithDevTools(applyMiddleware(logger))
-);
+    );
 
+    // store.dispatch({
+        //     type: 'ADD_VACANCY',
+        //     data: {
+            //         name: 'hello'
+
+//     }
+// })
 ReactDOM.render(
     <Provider store={store}>
         <App />
     </Provider>
     , document.getElementById('root')
 );
+
+store.dispatch({ type: 'FILL_IN_FORM', data: initialState.vacancies[0] })
