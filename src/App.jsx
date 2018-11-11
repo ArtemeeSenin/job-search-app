@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import NavMenu from './components/containers/NavMenu'
-import Rating from './components/Rating'
+// import Rating from './components/Rating'
+import VacancyCard from './components/VacancyCard'
 
 class App extends Component {
   render() {
@@ -9,7 +10,7 @@ class App extends Component {
           <NavMenu />
           <main className="page-content">
             <div className="container">
-              <Rating />
+              <VacancyCard />
             </div>
           </main>
       </Fragment>

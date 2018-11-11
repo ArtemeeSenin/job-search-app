@@ -31,8 +31,8 @@ const RatingTable = (props) => {
         <div className="rating-table">
             <table className="rating-table__table">
                 <tbody>
-                    { vacancyList.map( (vacancy) => (
-                        <RatingTableVacancy data={vacancy}/>
+                    { vacancyList.map( (vacancy, key) => (
+                        <RatingTableVacancy key={key} data={vacancy}/>
                     ))}
                 </tbody>
             </table>
