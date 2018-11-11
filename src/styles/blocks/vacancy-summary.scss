@@ -26,13 +26,15 @@
             font-size: $font-size-large;
             font-weight: normal;
             margin-bottom: $font-size-small;
+            cursor: pointer;
         }
         &-company {
             font-size: $font-size-medium;
             font-weight: bold;
             margin-top: 0;
             margin-bottom: 0;
-        }   
+            cursor: pointer;
+        }
     }
 
     &__salary {
@@ -83,7 +85,7 @@
             &--not-suitable {
                 color: $color-info;
             }
-        }        
+        }
     }
     &__requirements {
         margin-bottom: $font-size-medium;
@@ -118,10 +120,10 @@
         grid-template-columns: 72% 25%;
         grid-template-columns: minmax(480px, 72%) minmax(180px, 25%);
         grid-column-gap: 3%;
-        grid-template-areas: 
+        grid-template-areas:
             "position conditions"
             "info conditions";
-        
+
         & > :nth-child(1) {
             grid-area: position;
         }
@@ -130,7 +132,7 @@
         }
         & > :nth-child(3) {
             grid-area: info;
-        }        
+        }
     }
 }
 
