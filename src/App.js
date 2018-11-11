@@ -1,14 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import NavMenu from './components/NavMenu'
-
+import Rating from './components/Rating'
 
 class App extends Component {
   render() {
     return (
       <Fragment>
           <NavMenu />
-          <main class="page-content">
-            <div class="container">
+          <main className="page-content">
+            <div className="container">
+              <Rating />
             </div>
           </main>
       </Fragment>

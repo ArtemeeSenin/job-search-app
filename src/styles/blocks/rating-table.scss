@@ -1,15 +1,19 @@
 .rating-table {
     color: $color-text-primary-weak;
-    
+
     &__table {
         width: 100%;
         max-width: 100%;
         table-layout: fixed;
         border-collapse: collapse;
         background-color: $color-background-primary-inverse;
-        box-shadow: 
+        box-shadow:
             -10px 2px 10px 0px rgba(0,0,0,0.15),
             10px 2px 10px 0px rgba(0,0,0,0.15);
+    }
+
+    &__table-row:last-of-type &__table-data {
+        border-bottom: none;
     }
 
     &__table-data {
