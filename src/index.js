@@ -1,7 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { composeWithDevTools } from 'redux-devtools-extension'
 import { Provider } from 'react-redux'
 import { reducer as formReducer } from 'redux-form'
 import { createLogger } from 'redux-logger'
@@ -66,7 +67,9 @@ let store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <Router>
+            <App />
+        </Router>
     </Provider>
     , document.getElementById('root')
 );
