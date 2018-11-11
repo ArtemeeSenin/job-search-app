@@ -15,12 +15,21 @@ const data = {
     interesting: "smile",
     comment: "Frontend developer at Quby you will work primarily on our hybrid mobile application which is targeted at our energy utility’s end users. Frontend developer at Quby you will work primarily on our hybrid mobile application which is targeted at our energy utility’s end users."
 }
-
+const links = [
+    {
+        text: "See rating",
+        path: '/rating'
+    },
+    {
+        text: "Edit",
+        path: '/edit'
+    }
+]
 const VacancyCard = () => (
     <article className="card-info">
         <CardHeader data={{name: data.position, company: data.company}}/>
         <CardContent />
-        <CardFooter />
+        <CardFooter links={ links }/>
     </article>
 )
 

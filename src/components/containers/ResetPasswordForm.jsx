@@ -11,6 +11,7 @@ const ResetPasswordForm = () => (
             label="Login"
             placeholder="Your email address"
         />
+        <button type="submit" className="button button--shadow">Reset</button>
         <div className="sign__label-text">Remembered your password?</div>
         <a to="/sign-in" className="button button--shadow">Sign in</a>
     </form>

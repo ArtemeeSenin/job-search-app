@@ -1,10 +1,11 @@
 import React from 'react'
 
-const CardFooter = () => (
+const CardFooter = ({ links }) => (
     <footer className="card-info__footer">
         <div className="card-info__footer-buttons-container">
-            <a className="button" to="/rating">See rating</a>
-            <a className="button" to="/edit-job">Edit</a>
+            {links.map( (link, key) => (
+                <a className="button" to={ link.path } key={key}>{ link.text }</a>
+            ))}
         </div>
     </footer>
 )

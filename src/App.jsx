@@ -2,7 +2,8 @@ import React, { Component, Fragment } from 'react';
 import NavMenu from './components/containers/NavMenu'
 // import Rating from './components/Rating'
 // import VacancyCard from './components/VacancyCard'
-import Login from './components/Login'
+// import Login from './components/Login'
+import Vacancy from './components/Vacancy'
 
 class App extends Component {
   render() {
@@ -11,7 +12,7 @@ class App extends Component {
           <NavMenu />
           <main className="page-content">
             <div className="container">
-              <Login />
+              <Vacancy />
             </div>
           </main>
       </Fragment>

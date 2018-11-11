@@ -4,6 +4,7 @@
     margin: 0 auto;
     padding: $inner-container-padding-top-x-large $inner-container-padding-large;
     background: transparent;
+    box-shadow: 0 0 34px 10px rgba(0, 0, 0, 0.15);
 
     &--bg-variation-light {
         background-color: $color-background-variation-light;
@@ -23,6 +24,7 @@
         margin-bottom: $font-size-xx-large;
         text-decoration: none;
         font-size: 12px;
+        outline: none;
     }
     &__label-text {
         padding: 4px 0;
