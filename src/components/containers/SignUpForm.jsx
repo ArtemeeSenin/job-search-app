@@ -2,7 +2,7 @@ import React from 'react'
 import { Field, FieldArray, reduxForm } from 'redux-form'
 import { Text } from '../fields'
 
-const SignInForm = () => (
+const SignUpForm = () => (
     <form className="form" action="#" method="POST">
         <Field
             name="login"
@@ -18,13 +18,19 @@ const SignInForm = () => (
             label="Password"
             placeholder=""
         />
-        <a to="/sign-reset" className="button button--hint">I can't log in</a> <br />
-        <button type="submit" className="button button--shadow">Log in</button>
-        <div className="sign__label-text">Don't have an account yet?</div>
-        <a to="/sign-up" className="button button--shadow">Sign up</a>
+        <Field
+            name="confirmPassword"
+            component={Text}
+            type="password"
+            label="Repeat password"
+            placeholder=""
+        />
+        <button type="submit" className="button button--shadow">Register</button>
+        <div className="sign__label-text">Already have an account?</div>
+        <a to="/sign-up" className="button button--shadow">Sign in</a>
     </form>
 )
 
 export default reduxForm({
-    form: 'signin'
-})(SignInForm);
+    form: 'signup'
+})(SignUpForm);
