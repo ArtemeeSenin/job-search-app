@@ -15,7 +15,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      user: null
+      user: 'Artem'
     }
   }
   login = (user) => {
@@ -31,9 +31,18 @@ class App extends Component {
           <main className="page-content">
             <div className="container">
               <Switch>
-                <PrivateRoute exact path="/" component={Rating} />
-                <Route path="/login" render={props => <SignIn onLogin={this.login} />} />
-                <Route path="/logout" render={props => <Logout onLogout={this.logout} />} />
+                <PrivateRoute exact path="/" component={ Rating } />
+                <Route path="/sign-in" render={props => <SignIn onLogin={ this.login } />} />
+                <Route path="/logout" render={props => <Logout onLogout={ this.logout } />} />
+                <Route path="/sign-up" component={ SignUp } />
+                <Route path="/reset-password" component={ ResetPassword } />
+                <PrivateRoute path="/rating" component={ Rating } />
+                <PrivateRoute path="/vacancy/:id" component={ VacancyCard } />
+                <PrivateRoute path="/vacancy/add" component={ VacancyEdit } />
+                <PrivateRoute path="/vacancy/edit/:id" component={ VacancyEdit } />
+                {/* <PrivateRoute path="/company/:id" component={ CompanyCard } />
+                <PrivateRoute path="/company/edit/:id" component={ CompanyEdit } /> */}
+                <Route render={props => <SignIn onLogin={ this.login } />} />
               </Switch>
             </div>
           </main>
