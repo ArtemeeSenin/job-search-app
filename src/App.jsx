@@ -9,6 +9,8 @@ import ResetPassword from './components/containers/ResetPassword'
 import Rating from './components/Rating'
 import VacancyCard from './components/VacancyCard'
 import VacancyEdit from './components/VacancyEdit'
+import CompanyCard from './components/CompanyCard'
+import CompanyEdit from './components/CompanyEdit'
 
 
 class App extends Component {
@@ -19,6 +21,7 @@ class App extends Component {
     }
   }
   login = (user) => {
+    // localStorage.setItem('user', JSON.stringify(user));
     this.setState({ user }, () => this.props.history.push('/rating'))
   }
   logout = () => {
@@ -31,17 +34,17 @@ class App extends Component {
           <main className="page-content">
             <div className="container">
               <Switch>
-                <PrivateRoute exact path="/" component={ Rating } />
+                <Route exact path="/" component={ Rating } />
                 <Route path="/sign-in" render={props => <SignIn onLogin={ this.login } />} />
                 <Route path="/logout" render={props => <Logout onLogout={ this.logout } />} />
                 <Route path="/sign-up" component={ SignUp } />
                 <Route path="/reset-password" component={ ResetPassword } />
-                <PrivateRoute path="/rating" component={ Rating } />
-                <PrivateRoute path="/vacancy/:id" component={ VacancyCard } />
-                <PrivateRoute path="/vacancy/add" component={ VacancyEdit } />
-                <PrivateRoute path="/vacancy/edit/:id" component={ VacancyEdit } />
-                {/* <PrivateRoute path="/company/:id" component={ CompanyCard } />
-                <PrivateRoute path="/company/edit/:id" component={ CompanyEdit } /> */}
+                <Route path="/rating" component={ Rating } />
+                <Route path="/vacancy/add" component={ VacancyEdit } />
+                <Route path="/vacancy/edit/:id" component={ VacancyEdit } />
+                <Route path="/vacancy/:id" component={ VacancyCard } />
+                <Route path="/company/edit/:id" component={ CompanyEdit } />
+                <Route path="/company/:id" component={ CompanyCard } />
                 <Route render={props => <SignIn onLogin={ this.login } />} />
               </Switch>
             </div>

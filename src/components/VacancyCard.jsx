@@ -25,10 +25,30 @@ const links = [
         path: '/edit'
     }
 ]
+
+const features = [
+    {
+        type: "clock",
+        text: "8 h.working day"
+    },
+    {
+        type: "bus",
+        text: "1 h. 20 min. in the way"
+    },
+    {
+        type: "graduation-cap",
+        text: "Additional studying is required"
+    },
+    {
+        type: "smile",
+        text: "Interesting"
+    },
+]
+
 const VacancyCard = () => (
     <article className="card-info">
         <CardHeader data={{name: data.position, company: data.company}}/>
-        <CardContent />
+        <CardContent features={features}/>
         <CardFooter links={ links }/>
     </article>
 )
