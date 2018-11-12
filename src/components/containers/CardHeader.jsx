@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const CardHeader = ({ data }) => (
     <header className="card-info__header">
         <div className="card-info__header-vacancy">
-            <h1 className="card-info__header-vacancy-position">{ data.name }</h1>
+            <h1 className="card-info__header-vacancy-position">{ data.pageName }</h1>
             {data.company ? <h2 className="card-info__header-vacancy-company"><Link to="/company/1">{ data.company }</Link></h2> : null}
         </div>
         {data.salary ?

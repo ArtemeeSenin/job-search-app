@@ -1,11 +1,10 @@
 import React from 'react'
-import { reduxForm } from 'redux-form'
 import VacancyForm from './containers/VacancyForm'
-
+const submit = values => {
+    console.log('This', this)
+    console.log(JSON.stringify(values,null, 2))
+}
 const VacancyEdit = () => (
-    <VacancyForm data={{ name: 'Add new vacancy'}}/>
+    <VacancyForm onSubmit={submit}/>
 );
-
-export default reduxForm({
-    form: 'vacancy'
-})(VacancyEdit);;
+export default VacancyEdit;
