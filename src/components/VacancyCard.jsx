@@ -22,7 +22,11 @@ const links = [
     },
     {
         text: "Edit",
-        path: '/edit'
+        path: '/vacancy/edit/1'
+    },
+    {
+        text: "Delete",
+        path: '/vacancy/delete/1'
     }
 ]
 

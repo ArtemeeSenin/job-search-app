@@ -7,7 +7,11 @@ import { Text, Textarea, Checkbox, Radio } from '../fields'
 const links = [
     {
         text: "Save",
-        path: '/rating'
+        path: '/vacancy/1'
+    },
+    {
+        text: "Delete",
+        path: '/vacancy/delete'
     },
     {
         text: "Cancel",

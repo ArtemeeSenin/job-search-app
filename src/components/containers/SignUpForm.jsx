@@ -1,5 +1,6 @@
 import React from 'react'
-import { Field, FieldArray, reduxForm } from 'redux-form'
+import { Link } from 'react-router-dom'
+import { Field, reduxForm } from 'redux-form'
 import { Text } from '../fields'
 
 const SignUpForm = () => (
@@ -27,7 +28,7 @@ const SignUpForm = () => (
         />
         <button type="submit" className="button button--shadow">Register</button>
         <div className="sign__label-text">Already have an account?</div>
-        <a to="/sign-up" className="button button--shadow">Sign in</a>
+        <Link to="/sign-up" className="button button--shadow">Sign in</Link>
     </form>
 )
 

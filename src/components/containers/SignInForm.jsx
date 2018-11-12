@@ -1,5 +1,6 @@
 import React from 'react'
-import { Field, FieldArray, reduxForm } from 'redux-form'
+import { Link } from 'react-router-dom'
+import { Field, reduxForm } from 'redux-form'
 import { Text } from '../fields'
 
 const SignInForm = () => (
@@ -18,10 +19,10 @@ const SignInForm = () => (
             label="Password"
             placeholder=""
         />
-        <a to="/sign-reset" className="button button--hint">I can't log in</a> <br />
+        <Link to="/sign-reset" className="button button--hint">I can't log in</Link> <br />
         <button type="submit" className="button button--shadow">Log in</button>
         <div className="sign__label-text">Don't have an account yet?</div>
-        <a to="/sign-up" className="button button--shadow">Sign up</a>
+        <Link to="/sign-up" className="button button--shadow">Sign up</Link>
     </form>
 )
 

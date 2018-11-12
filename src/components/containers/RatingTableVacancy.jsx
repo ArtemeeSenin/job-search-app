@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 const RatingTableVacancy = ({ data }) => (
     <tr className="rating-table__table-row">
         <td className={`vacancy-summary vacancy-summary--${data.status.toLowerCase().split(' ').join('-')} rating-table__table-data`}>
             <div className="vacancy-summary__position">
-                <h2 className="vacancy-summary__position-name"><a className="vacancy-summary__link" to="/info-card-job">{data.position}</a></h2>
-                <h3 className="vacancy-summary__position-company"><a className="vacancy-summary__link" to="/info-card-company">{data.company}</a></h3>
+                <h2 className="vacancy-summary__position-name"><Link className="vacancy-summary__link" to="/vacancy/1">{data.position}</Link></h2>
+                <h3 className="vacancy-summary__position-company"><Link className="vacancy-summary__link" to="/company/1">{data.company}</Link></h3>
             </div>
             <div className="vacancy-summary__conditions">
                 <div className="vacancy-summary__conditions-main-info-contrainer">

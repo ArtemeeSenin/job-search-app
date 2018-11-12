@@ -1,5 +1,6 @@
 import React from 'react'
-import { Field, FieldArray, reduxForm } from 'redux-form'
+import { Link } from 'react-router-dom'
+import { Field, reduxForm } from 'redux-form'
 import { Text } from '../fields'
 
 const ResetPasswordForm = () => (
@@ -13,10 +14,10 @@ const ResetPasswordForm = () => (
         />
         <button type="submit" className="button button--shadow">Reset</button>
         <div className="sign__label-text">Remembered your password?</div>
-        <a to="/sign-in" className="button button--shadow">Sign in</a>
+        <Link to="/sign-in" className="button button--shadow">Sign in</Link>
     </form>
 )
 
 export default reduxForm({
-    form: 'signin'
+    form: 'resetpassword'
 })(ResetPasswordForm);

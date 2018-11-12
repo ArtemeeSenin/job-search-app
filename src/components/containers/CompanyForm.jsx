@@ -2,20 +2,20 @@ import React from 'react'
 import CardHeader from './CardHeader'
 import CardFooter from './CardFooter'
 import { Field } from 'redux-form'
-import { Text, Textarea, Checkbox, Radio } from '../fields'
+import { Text, Textarea } from '../fields'
 
 const links = [
     {
         text: "Save",
-        path: '/rating'
+        path: '/company/1'
     },
     {
         text: "Cancel",
-        path: '/rating'
+        path: '/company/1'
     }
 ]
 
-const toNumber = value => parseInt(value);
+// const toNumber = value => parseInt(value);
 // const minutesToHours = value => Math.floor(value / 60)
 
 const CompanyForm = ({ data }) => (

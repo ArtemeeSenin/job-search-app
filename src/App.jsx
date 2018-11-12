@@ -41,6 +41,7 @@ class App extends Component {
                 <Route path="/reset-password" component={ ResetPassword } />
                 <Route path="/rating" component={ Rating } />
                 <Route path="/vacancy/add" component={ VacancyEdit } />
+                <Route path="/vacancy/delete" component={ Rating } />
                 <Route path="/vacancy/edit/:id" component={ VacancyEdit } />
                 <Route path="/vacancy/:id" component={ VacancyCard } />
                 <Route path="/company/edit/:id" component={ CompanyEdit } />
