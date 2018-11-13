@@ -7,28 +7,9 @@ import middleware from './middleware'
 import { Provider } from 'react-redux'
 import './index.scss'
 import App from './App';
+import initialState from './index.json';
 
-
-const initialState = {
-    form: {},
-    vacancies: [
-        {
-            position: 'Senior front-end developer',
-            company: 'Epic Company',
-            companyId: 0,
-            salary: 100000,
-            status: 'offer',
-            workDay: 480,
-            inTheWay: 40,
-            isInteresting: true,
-            requiresAdditionalStudying: true,
-            description: 'World wide company',
-            commentary: 'This is a good company'
-        }
-    ]
-};
-
-let store = createStore(reducer, middleware);
+let store = createStore(reducer, initialState, middleware);
 
 ReactDOM.render(
     <Provider store={store}>

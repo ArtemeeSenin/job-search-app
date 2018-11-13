@@ -1,36 +1,18 @@
 import React from 'react'
-import { Link, withRouter } from 'react-router-dom'
 import { reduxForm } from 'redux-form'
 import CardHeader from './CardHeader'
-// import CardFooter from './CardFooter'
 import { Field } from 'redux-form'
 import { Text, Textarea, Checkbox, Radio } from '../fields'
-
-// const links = [
-//     {
-//         text: "Save",
-//         path: '/vacancy/1'
-//     },
-//     {
-//         text: "Delete",
-//         path: '/vacancy/delete'
-//     },
-//     {
-//         text: "Cancel",
-//         path: '/rating'
-//     }
-// ]
 
 const toNumber = value => parseInt(value);
 // const minutesToHours = value => Math.floor(value / 60)
 
 const VacancyForm = (props) => {
     const { handleSubmit, history } = props;
-    const preSumbit = () => { /*history.push('/vacancy/1');*/ /*return Promise.reject()*/};
     return (
         <article className="card-info">
             <CardHeader data={{pageName: "Add new vacancy"}} />
-            <form onSubmit={handleSubmit(preSumbit) } className="linear-form" noValidate id="vacancy">
+            <form onSubmit={handleSubmit} className="linear-form" noValidate id="vacancy">
                 <Field
                     name="position"
                     component={Text}
@@ -128,4 +110,4 @@ const VacancyForm = (props) => {
 };
 export default reduxForm({
     form: 'vacancy'
-})(withRouter(VacancyForm));
+})(VacancyForm);

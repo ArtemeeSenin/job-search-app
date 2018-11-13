@@ -23,7 +23,7 @@ const CompanyForm = ({ data }) => (
         <CardHeader data={{ name: data.name }} />
         <form action="" className="linear-form" noValidate>
             <Field
-                name="name"
+                name="company"
                 component={Text}
                 type="text"
                 label="Name"
@@ -31,7 +31,7 @@ const CompanyForm = ({ data }) => (
                 inputModifiers="text-input__field--dark-border text-input__field--fw-normal"
             />
             <Field
-                name="description"
+                name="companyDescription"
                 component={Textarea}
                 label="Description"
                 placeholder="Describe what this company does"
@@ -40,7 +40,7 @@ const CompanyForm = ({ data }) => (
                 inputModifiers="text-input__field--dark-border text-input__field--fw-normal text-input__field--area"
             />
             <Field
-                name="commentary"
+                name="companyCommentary"
                 component={Textarea}
                 label="Personal commentary"
                 placeholder="What do you think about working here"

@@ -1,0 +1,36 @@
+{
+    "user": {},
+    "vacancies": [{
+            "position": "Senior",
+            "company": "Wrike",
+            "salary": 300000,
+            "workDay": 480,
+            "inTheWay": 40,
+            "description": "Lke it",
+            "isInteresting": true,
+            "commentary": "Nice company",
+            "status": "offer",
+            "id": "petyu0oy44nzecbe6rmj",
+            "companyDescription": "",
+            "companyCommentary": ""
+        },
+        {
+            "position": "Senior",
+            "company": "Google",
+            "salary": 599999,
+            "workDay": 500,
+            "inTheWay": 20,
+            "description": "Lke it so",
+            "isInteresting": true,
+            "commentary": "Very Nice company",
+            "status": "candidate",
+            "id": "k3t0mkyyataquvlkrq5t",
+            "companyDescription": "",
+            "companyCommentary": "",
+            "requiresAdditionalStudying": true
+        }
+    ],
+    "visibilityFilter": {},
+    "form": {},
+    "loading": {}
+}
