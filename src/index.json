@@ -1,11 +1,27 @@
 {
     "user": {},
-    "vacancies": [{
+    "vacancies": [
+        {
             "position": "Senior front-end developer",
             "company": "Epic Company",
             "salary": 110000,
             "workDay": 480,
             "inTheWay": 40,
+            "description": "Like it",
+            "isInteresting": true,
+            "requiresAdditionalStudying": true,
+            "commentary": "Frontend developer at Quby you will work primarily on React stack basically and use some native tools",
+            "status": "offer",
+            "id": "petyu0oy44nzecbe6rmj",
+            "companyDescription": "",
+            "companyCommentary": ""
+        },
+        {
+            "position": "Senior front-end developer",
+            "company": "Epic Company",
+            "salary": 110000,
+            "workDay": 480,
+            "inTheWay": 20,
             "description": "Like it",
             "isInteresting": true,
             "requiresAdditionalStudying": true,
@@ -48,7 +64,7 @@
         {
             "position": "Middle front-end developer",
             "company": "Some small company",
-            "salary": 110000,
+            "salary": 120000,
             "workDay": 480,
             "inTheWay": 10,
             "description": "Not so interesting",
@@ -56,6 +72,36 @@
             "requiresAdditionalStudying": true,
             "commentary": "Very Nice company",
             "status": "declined",
+            "id": "nna0mkyyataquvlkrq5t",
+            "companyDescription": "",
+            "companyCommentary": ""
+        },
+        {
+            "position": "Senior front-end developer",
+            "company": "Some small company",
+            "salary": 110000,
+            "workDay": 480,
+            "inTheWay": 10,
+            "description": "Not so interesting",
+            "isInteresting": true,
+            "requiresAdditionalStudying": true,
+            "commentary": "Very Nice company",
+            "status": "declined",
+            "id": "nna0mkyyataquvlkrq5t",
+            "companyDescription": "",
+            "companyCommentary": ""
+        },
+        {
+            "position": "Senior front-end developer",
+            "company": "Some small company",
+            "salary": 110000,
+            "workDay": 540,
+            "inTheWay": 10,
+            "description": "Not so interesting",
+            "isInteresting": true,
+            "requiresAdditionalStudying": true,
+            "commentary": "Very Nice company",
+            "status": "not suitable",
             "id": "nna0mkyyataquvlkrq5t",
             "companyDescription": "",
             "companyCommentary": ""

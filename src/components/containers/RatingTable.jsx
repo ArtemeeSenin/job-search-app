@@ -3,31 +3,6 @@ import { connect } from 'react-redux'
 import RatingTableVacancy from './RatingTableVacancy';
 
 const RatingTable = (props) => {
-    // const vacancyList = [{
-    //     position: "Senior front-end developer",
-    //     company: "Epic Company",
-    //     salaryNumber: "220 000",
-    //     salaryCurrency: "₽",
-    //     status: "Offer",
-    //     workingDay: "8 h.",
-    //     inTheWay: "1 h. 20 min.",
-    //     additionalStudying: true,
-    //     interesting: "smile",
-    //     comment: "Frontend developer at Quby you will work primarily on our hybrid mobile application which is targeted at our energy utility’s end users. Frontend developer at Quby you will work primarily on our hybrid mobile application which is targeted at our energy utility’s end users."
-    // },
-    // {
-    //     position: "Senior front-end developer",
-    //     company: "Epic Company",
-    //     salaryNumber: "220 000",
-    //     salaryCurrency: "₽",
-    //     status: "Declined",
-    //     workingDay: "8 h.",
-    //     inTheWay: "1 h. 20 min.",
-    //     additionalStudying: true,
-    //     interesting: "frown",
-    //     comment: "Frontend developer at Quby you will work primarily on our hybrid mobile application which is targeted at our energy utility’s end users. Frontend developer at Quby you will work primarily on our hybrid mobile application which is targeted at our energy utility’s end users."
-    // }]
-
     const { vacancies, visibilityFilter } = props;
 
     return (
@@ -43,8 +18,32 @@ const RatingTable = (props) => {
     )
 }
 function mapStateToProps(state) {
+    let { vacancies } = state;
+    const comparevacancies = (a, b) => {
+        return statusCompare(a, b);
+    }
+    const profitCompare = (a, b) => {
+        const aProfit = ~~(a.salary / (a.workDay + a.inTheWay));
+        const bProfit = ~~(b.salary / (b.workDay + b.inTheWay));
+        return bProfit - aProfit;
+    }
+    const interestCompare = (a, b) => {
+        if (a.isInteresting === b.isInteresting) return profitCompare(a, b)
+        else return !a.isInteresting
+    }
+    const statusCompare = (a, b) => {
+        if (a.status === b.status) return interestCompare(a, b)
+        else if (a.status === 'offer') return -1
+        else if (b.status === 'offer') return 1
+        else if (a.status === 'candidate') return -1
+        else if (b.status === 'candidate') return 1
+        else if (a.status === 'not suitable') return -1
+        else if (b.status === 'not suitable') return 1
+    }
+    vacancies.sort(comparevacancies);
+
     return {
-        vacancies: state.vacancies,
+        vacancies,
         visibilityFilter: state.visibilityFilter
     }
 }

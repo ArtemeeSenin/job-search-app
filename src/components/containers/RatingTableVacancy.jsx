@@ -44,7 +44,7 @@ const RatingTableVacancy = ({ data }) => (
                         }
                         <li className="vacancy-summary__info-list-item">
                             <i className={`fal fa-${data.isInteresting ? 'smile' : 'frown'}`}></i>
-                            <span className="vacancy-summary__info-list-item-text">Interesting</span>
+                            <span className="vacancy-summary__info-list-item-text">{data.isInteresting ? 'Interesting' : 'Not interesting'}</span>
                         </li>
                     </ul>
                     {data.commentary ? (
