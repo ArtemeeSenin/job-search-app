@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.classList.toggle('is-active');
         document.body.classList.toggle('is-menu-active');
     })
-    document.body.addEventListener('click', (e) => {     
+    document.body.addEventListener('click', (e) => {
         if (document.body.classList.contains('is-menu-active') && !e.target.classList.contains('nav-list__item-link')){
             e.stopPropagation();
             hamburger.classList.toggle('is-active');
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cardInfoDescription.addEventListener('click', (e) => {
             e.currentTarget.classList.toggle('card-info__description--is-active')
         })
-        
+
         const cardInfoComment = document.querySelector('.card-info__comment');
         cardInfoComment.addEventListener('click', (e) => {
             e.currentTarget.classList.toggle('card-info__comment--is-active')
@@ -52,10 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function autocomplete (el, dataFull) {
         let currentFocus;
         let field = el.querySelector('.rating-filters__search-line-input');
-        
+
         field.addEventListener('input', (e) => {
             // debugger;
-            let listContainer = el.querySelector('.rating-filters__dropdown-list'), 
+            let listContainer = el.querySelector('.rating-filters__dropdown-list'),
                 currentValue = e.target.value;
             closeList(listContainer);
 
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let data = dataFull.filter( (str) => {
                 return str.toLowerCase().indexOf(currentValue.toLowerCase()) === 0;
             })
-            
+
 
             for(let i = 0; (i < data.length && i < 10); i++){
                 let suggestionItem = document.createElement('LI');
@@ -135,4 +135,11 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch {
         console.log('not this page');
     }
+
+    document.querySelectorAll('.comment-toggling').forEach( (block) => {
+        const el = block.querySelector('.comment-toggling__text');
+        if (!(el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth)){
+            block.classList.add('comment-toggling--no-action')
+        }
+    })
 });

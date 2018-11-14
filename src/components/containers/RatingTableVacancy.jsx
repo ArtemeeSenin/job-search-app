@@ -11,23 +11,23 @@ const RatingTableVacancy = ({ data }) => (
             <div className="vacancy-summary__conditions">
                 <div className="vacancy-summary__conditions-main-info-contrainer">
                     <h4 className="vacancy-summary__salary">
-                        <span className="vacancy-summary__salary-number">{data.salaryNumber}</span>
-                        <span className="vacancy-summary__salary-currency">{data.salaryCurrency}</span>
+                        <span className="vacancy-summary__salary-number">{data.salary.toLocaleString('ru')}</span>
+                        <span className="vacancy-summary__salary-currency">&#8381;</span>
                     </h4>
                     <div className="vacancy-summary__conditions-status-container">
-                        <span className="vacancy-summary__status">
-                            <i className={`vacancy-summary__statuc-icon vacancy-summary__status-icon--${data.status.toLowerCase().split(' ').join('-')} fas fa-circle`}></i>
+                        <div className="vacancy-summary__status">
+                            <i className={`vacancy-summary__status-icon vacancy-summary__status-icon--${data.status.toLowerCase().split(' ').join('-')} fas fa-circle`}></i>
                             <span className="vacancy-summary__status-text">{data.status}</span>
-                        </span>
+                        </div>
                     </div>
                     <ul className="vacancy-summary__info-list">
                         <li className="vacancy-summary__info-list-item">
                             <i className="fal fa-clock"></i>
-                            <span className="vacancy-summary__info-list-item-text">{data.workingDay} working day</span>
+                            <span className="vacancy-summary__info-list-item-text">{data.workDay / 60} h. work day</span>
                         </li>
                         <li className="vacancy-summary__info-list-item">
                             <i className="fal fa-bus"></i>
-                            <span className="vacancy-summary__info-list-item-text">{data.inTheWay} in the way</span>
+                            <span className="vacancy-summary__info-list-item-text">{data.inTheWay} min. in the way</span>
                         </li>
                     </ul>
                 </div>
@@ -35,25 +35,22 @@ const RatingTableVacancy = ({ data }) => (
             <div className="vacancy-summary__addtional-info">
                 <div className="vacancy-summary__requirements">
                     <ul className="vacancy-summary__info-list">
-                        {data.additionalStudying ? (
+                        {data.requiresAdditionalStudying ? (
                             <li className="vacancy-summary__info-list-item">
                                 <i className="fal fa-graduation-cap"></i>
                                 <span className="vacancy-summary__info-list-item-text">Additional studying is required</span>
                             </li>
                         ) : ''
                         }
-                        {data.interesting ? (
-                            <li className="vacancy-summary__info-list-item">
-                                <i className={`fal fa-${data.interesting}`}></i>
-                                <span className="vacancy-summary__info-list-item-text">Interesting</span>
-                            </li>
-                        ) : ''
-                        }
+                        <li className="vacancy-summary__info-list-item">
+                            <i className={`fal fa-${data.isInteresting ? 'smile' : 'frown'}`}></i>
+                            <span className="vacancy-summary__info-list-item-text">Interesting</span>
+                        </li>
                     </ul>
-                    {data.comment ? (
+                    {data.commentary ? (
                         <div className="vacancy-summary__commentary-container">
                             <div className="comment-toggling comment-toggling--one-line">
-                                <p className="comment-toggling__text">{data.comment}</p>
+                                <p className="comment-toggling__text">{data.commentary}</p>
                             </div>
                         </div>
                     ) : ''

@@ -12,7 +12,7 @@
         line-height: 1.6;
         font-size: $font-size-medium;
     }
-    
+
     &::after {
         content: 'Read more';
         position: absolute;
@@ -25,6 +25,12 @@
         .comment-toggling__text {
             white-space: nowrap;
             text-overflow: ellipsis;
+        }
+    }
+
+    &--no-action {
+        &::after {
+            display: none;
         }
     }
     &--text-fade {
@@ -51,7 +57,7 @@
 
             &::before {
                 opacity: 0;
-            }            
+            }
         }
         &::after {
             content: 'Read less'

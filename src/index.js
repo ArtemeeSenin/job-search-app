@@ -19,5 +19,3 @@ ReactDOM.render(
     </Provider>
     , document.getElementById('root')
 );
-
-// store.dispatch({ type: 'FILL_IN_FORM', data: initialState.vacancies[0] })

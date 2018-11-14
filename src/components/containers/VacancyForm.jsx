@@ -94,7 +94,7 @@ const VacancyForm = (props) => {
                         "candidate",
                         "offer",
                         "declined",
-                        "not interesting"
+                        "not suitable"
                     ]}
                 />
             </form>

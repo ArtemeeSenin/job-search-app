@@ -14,10 +14,6 @@ const CardContent = ({features}) => (
                     Over 150 professionals at our Amsterdam office are working to create solutions for homes and offices across Europe.
                             Making lives smarter, easier and more comfortable.</p>
             </div>
-            <div className="card-info__action-buttons">
-                <button className="button button--action-read-more" type="button">Read more</button>
-                <button className="button button--action-read-less" type="button">Read less</button>
-            </div>
         </section>
         { features
             ? <section className="card-info__conditions">
@@ -44,10 +40,6 @@ const CardContent = ({features}) => (
                     <li>Your challenge</li>
                 </ul>
                 <p>This job will be full of fun!</p>
-            </div>
-            <div className="card-info__action-buttons">
-                <button className="button button--action-read-more" type="button">Read more</button>
-                <button className="button button--action-read-less" type="button">Read less</button>
             </div>
         </section>
     </div>
