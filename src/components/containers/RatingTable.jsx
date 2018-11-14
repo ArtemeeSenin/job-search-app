@@ -9,7 +9,7 @@ const RatingTable = (props) => {
         <div className="rating-table">
             <table className="rating-table__table">
                 <tbody>
-                    { vacancies.map( (vacancy, key) => (
+                    { vacancies.filter( (vacancy) => { return visibilityFilter.length ? visibilityFilter.includes(vacancy.status) : vacancy }).map( (vacancy, key) => (
                         <RatingTableVacancy key={key} data={vacancy}/>
                     ))}
                 </tbody>

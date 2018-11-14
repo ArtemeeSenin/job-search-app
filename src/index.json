@@ -107,7 +107,7 @@
             "companyCommentary": ""
         }
     ],
-    "visibilityFilter": {},
+    "visibilityFilter": [],
     "form": {},
     "loading": {}
 }
