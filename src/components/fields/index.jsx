@@ -92,3 +92,21 @@ export const Radio = props => {
         </div>
     )
 }
+
+export const FilterCheckbox = props => {
+    const { input, label, type, modifier } = props;
+
+    return (
+        <li className="rating-filters__dropdown-list-item">
+            <label className={`rating-filters__filter rating-filters__filter--${ modifier }`}>
+                <input
+                    {...input}
+                    type={type}
+                    className="rating-filters__checkbox"
+                />
+                <i className="rating-filters__filter-icon fal"></i>
+                <span>{ label }</span>
+            </label>
+        </li>
+    )
+}

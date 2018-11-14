@@ -1,9 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux'
+import { reduxForm } from 'redux-form'
+import { Field } from 'redux-form'
+import { FilterCheckbox } from '../fields'
+
 
 const RatingFilters = (props) => {
+    const { handleSubmit } = props;
+    const onSubmit = (values) => {
+        console.log(values);
+    }
+
     return (
         <div className="rating-filters">
-            <form className="rating-filters__form" action="" method="GET">
+            <form onSubmit={handleSubmit(onSubmit)} className="rating-filters__form" noValidate>
                 <div className="rating-filters__search">
                     <div className="rating-filters__search-line">
                         <input type="text" className="rating-filters__search-line-input" placeholder="Start search"
@@ -21,34 +31,34 @@ const RatingFilters = (props) => {
                         <i className="fal fa-chevron-down"></i>
                     </p>
                     <ul className="rating-filters__dropdown-list">
-                        <li className="rating-filters__dropdown-list-item">
-                            <label className="rating-filters__filter rating-filters__filter--candidate">
-                                <input type="checkbox" className="rating-filters__checkbox" />
-                                <i className="rating-filters__filter-icon fal"></i>
-                                <span>Candidate</span>
-                            </label>
-                        </li>
-                        <li className="rating-filters__dropdown-list-item">
-                            <label className="rating-filters__filter rating-filters__filter--offer">
-                                <input type="checkbox" className="rating-filters__checkbox" />
-                                <i className="rating-filters__filter-icon fal"></i>
-                                <span>Offer</span>
-                            </label>
-                        </li>
-                        <li className="rating-filters__dropdown-list-item">
-                            <label className="rating-filters__filter rating-filters__filter--declined">
-                                <input type="checkbox" className="rating-filters__checkbox" />
-                                <i className="rating-filters__filter-icon fal"></i>
-                                <span>Declined</span>
-                            </label>
-                        </li>
-                        <li className="rating-filters__dropdown-list-item">
-                            <label className="rating-filters__filter rating-filters__filter--not-suitable">
-                                <input type="checkbox" className="rating-filters__checkbox" />
-                                <i className="rating-filters__filter-icon fal"></i>
-                                <span>Not suitable</span>
-                            </label>
-                        </li>
+                        <Field
+                            name="offer"
+                            type="checkbox"
+                            component={FilterCheckbox}
+                            modifier="offer"
+                            label="Offer"
+                        />
+                        <Field
+                            name="candidate"
+                            type="checkbox"
+                            component={FilterCheckbox}
+                            modifier="candidate"
+                            label="Candidate"
+                        />
+                        <Field
+                            name="not suitable"
+                            type="checkbox"
+                            component={FilterCheckbox}
+                            modifier="not-suitable"
+                            label="Not suitable"
+                        />
+                        <Field
+                            name="declined"
+                            type="checkbox"
+                            component={FilterCheckbox}
+                            modifier="declined"
+                            label="Declined"
+                        />
                     </ul>
                 </div>
                 <button className="rating-filters__filter-button button button--ghost" type="submit">Filter</button>
@@ -57,4 +67,6 @@ const RatingFilters = (props) => {
     )
 }
 
-export default RatingFilters;
+export default connect()(reduxForm({
+    form: 'filters'
+})(RatingFilters));

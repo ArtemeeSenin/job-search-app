@@ -1,11 +1,11 @@
 @mixin drop-shadow() {
-    box-shadow: 
+    box-shadow:
                 -10px 2px 10px 0px rgba(0,0,0,0.25),
                 10px 2px 10px 0px rgba(0,0,0,0.25);
 }
 
 .rating-filters {
-    padding: 18px 10px 24px;    
+    padding: 18px 10px 24px;
     background: $color-background-primary;
     &__form {
         text-align: right;
@@ -20,20 +20,20 @@
         &--is-active {
             @include drop-shadow();
 
-            .rating-filters__search-line-input {                
+            .rating-filters__search-line-input {
                 box-shadow: none;
             }
             .rating-filters__dropdown-list {
-                transform: scaleY(1);                
+                transform: scaleY(1);
                 font-size: $font-size-large;
                 @include drop-shadow();
             }
         }
-        
+
         &-line {
             position: relative;
             transition: filter .1s ease;
-            
+
             &:hover {
                 filter: brightness(110%);
             }
@@ -61,7 +61,7 @@
                 transition: box-shadow .2s ease;
 
                 &::placeholder {
-                    color: rgba($color-text-primary-inverse, .6); 
+                    color: rgba($color-text-primary-inverse, .6);
                 }
 
             }
@@ -70,7 +70,7 @@
                 position: absolute;
                 top: 12px; right: 10px;
             }
-        }        
+        }
     }
     &__statuses {
         position: relative;
@@ -83,7 +83,7 @@
         border: none;
         background: $color-background-primary;
         font-size: $font-size-large;
-        color: $color-text-primary-inverse;        
+        color: $color-text-primary-inverse;
         text-decoration: none;
         box-shadow: none;
         transition: box-shadow .2s ease;
@@ -92,8 +92,8 @@
             @include drop-shadow();
             .rating-filters__dropdown-list {
                 max-height: 400px;
-                transform: scaleY(1);                
-                font-size: $font-size-large;                
+                transform: scaleY(1);
+                font-size: $font-size-large;
                 @include drop-shadow();
 
                 &--floating {
@@ -129,11 +129,11 @@
                 top: 12px; right: 10px;
                 transition: transform .2s ease;
             }
-        }       
+        }
     }
-    
+
     &__dropdown-list {
-        
+
         margin: 0;
         box-sizing: border-box;
         padding: 0;
@@ -163,7 +163,7 @@
         &-item {
             width: 100%;
             box-sizing: border-box;
-            padding: 10px 30px 12px 15px;
+            padding: 0;
             border-bottom: 1px solid $color-background-primary-inverse;
             overflow: hidden;
             white-space: nowrap;
@@ -181,6 +181,8 @@
         }
     }
     &__filter {
+        display: block;
+        padding: 10px 30px 12px 15px;
 
         &--candidate {
             input:checked ~ .rating-filters__filter-icon, input:checked ~ span {
@@ -209,7 +211,7 @@
                 content: "\f0c8"; // content: "\f14a";
             }
         }
-        span {            
+        span {
             transition: color .25s ease;
         }
         input[type="checkbox"] {
@@ -245,19 +247,19 @@
 }
 @media screen and (min-width: $breakpoint-l) {
     .rating-filters {
-        &__search {            
+        &__search {
             font-size: $font-size-medium;
-            
-            &--is-active {            
+
+            &--is-active {
                 .rating-filters__dropdown-list {
                     font-size: $font-size-medium;
                 }
             }
         }
-        &__statuses {            
+        &__statuses {
             font-size: $font-size-medium;
-            
-            &--is-active {            
+
+            &--is-active {
                 .rating-filters__dropdown-list {
                     font-size: $font-size-medium;
                 }
@@ -276,21 +278,21 @@
 
         &__form {
             flex-direction: column;
-        }  
-        
-        &__search {            
+        }
+
+        &__search {
             font-size: $font-size-regular;
-            
-            &--is-active {            
+
+            &--is-active {
                 .rating-filters__dropdown-list {
                     font-size: $font-size-regular;
                 }
             }
         }
-        &__statuses {            
+        &__statuses {
             font-size: $font-size-regular;
-            
-            &--is-active {            
+
+            &--is-active {
                 .rating-filters__dropdown-list {
                     font-size: $font-size-regular;
                 }
