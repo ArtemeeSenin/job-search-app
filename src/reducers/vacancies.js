@@ -5,12 +5,9 @@ export default (state = [], action) => {
         case ADD_VACANCY:
             return state.concat(action.data);
         case UPDATE_VACANCY:
-            return [
-                ...state,
-                action.data
-            ]
+            return state.filter((vacancy) => vacancy.id !== action.data.id).concat(action.data)
         case DELETE_VACANCY:
-            return state.filter( (vacancy) => vacancy.id !== action.id)
+            return
         default:
             return state;
     }
