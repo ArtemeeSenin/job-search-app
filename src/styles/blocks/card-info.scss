@@ -118,6 +118,7 @@
         &-list {
             margin: 0;
             padding: 0;
+            min-width: 225px;
 
             &-item {
                 font-size: 0;
@@ -247,6 +248,9 @@
             //max-width: 500px;
             &-text {
                 height: auto;
+                &::before {
+                    display: none;
+                }
                 &::after {
                     display: none;
                 }
@@ -256,7 +260,6 @@
             display: none;
         }
         &__conditions {
-            //max-width: 300px;
             &-list {
                 &-item {
                     .fal {
@@ -270,10 +273,11 @@
         }
 
         &__comment {
-            //max-width: 500px;
-
             &-text {
                 height: auto;
+                &::before {
+                    display: none;
+                }
                 &::after {
                     display: none;
                 }

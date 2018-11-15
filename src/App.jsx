@@ -1,16 +1,16 @@
 import React, { Component, Fragment } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
-import PrivateRoute from './components/containers/PrivateRoute'
+// import PrivateRoute from './components/containers/PrivateRoute'
 import NavMenu from './components/containers/NavMenu'
 import SignIn from './components/containers/SignIn'
 import Logout from './components/containers/Logout'
 import SignUp from './components/containers/SignUp'
 import ResetPassword from './components/containers/ResetPassword'
 import Rating from './components/Rating'
-import VacancyCard from './components/VacancyCard'
-import VacancyEdit from './components/VacancyEdit'
-import CompanyCard from './components/CompanyCard'
-import CompanyEdit from './components/CompanyEdit'
+import Vacancy from './components/Vacancy'
+// import Company from './components/Company'
+// import CompanyCard from './components/CompanyCard'
+// import CompanyEdit from './components/CompanyEdit'
 
 
 class App extends Component {
@@ -40,12 +40,11 @@ class App extends Component {
                 <Route path="/sign-up" component={ SignUp } />
                 <Route path="/reset-password" component={ ResetPassword } />
                 <Route path="/rating" component={ Rating } />
-                <Route path="/vacancy/add" component={ VacancyEdit } />
-                <Route path="/vacancy/delete" component={ Rating } />
-                <Route path="/vacancy/edit/:id" component={ VacancyEdit } />
-                <Route path="/vacancy/:id" component={ VacancyCard } />
-                <Route path="/company/edit/:id" component={ CompanyEdit } />
-                <Route path="/company/:id" component={ CompanyCard } />
+                <Route path="/vacancy" component={ Vacancy } />
+                {/* <Route path="/vacancy/edit/:id" component={ Vacancy } />
+                <Route path="/vacancy/delete/:id" component={ Vacancy } />
+                <Route path="/vacancy/:id" component={ Vacancy } /> */}
+                {/* <Route path="/company" component={ Company } /> */}
                 <Route render={props => <SignIn onLogin={ this.login } />} />
               </Switch>
             </div>

@@ -10,8 +10,8 @@ const CardHeader = ({ data }) => (
         {data.salary ?
             <div className="card-info__header-salary">
                 <h2 className="card-info__header-salary-amount">
-                    <span className="card-info__header-salary-amount-number">{ data.salaryNumber }</span>
-                    <span className="card-info__header-salary-amount-currency">{ data.salaryCurrency }</span>
+                    <span className="card-info__header-salary-amount-number">{ data.salary.toLocaleString('ru') }</span>
+                    <span className="card-info__header-salary-amount-currency">₽</span>
                 </h2>
             </div>
             : null

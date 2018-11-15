@@ -1,12 +1,11 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-import VacancyForm from './containers/VacancyForm'
+import VacancyForm from './VacancyForm'
 import { connect } from 'react-redux'
-import { addVacancy } from '../actions/vacancies'
+import { addVacancy } from '../../actions/vacancies'
 
 const VacancyEdit = (props) => {
     const { history, dispatch } = props;
-    // console.log('ALL', props)
     const submit = values => {
         console.log(JSON.stringify(values, null, 2))
         dispatch(addVacancy(values));
