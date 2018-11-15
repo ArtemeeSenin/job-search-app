@@ -12,7 +12,7 @@ class RatingFilters extends Component {
         super(props);
         this.state = {
             ...props.data,
-            statusFilterOpened: false,
+            statusFilterOpened: true,
             textFilterOpened: false
         }
     }
@@ -25,9 +25,12 @@ class RatingFilters extends Component {
             dispatch(setVisibilityFilterStatus(values.status));
             dispatch(setVisibilityFilterText(values.textFilter));
         }
-        const vacanciesSuggestionSet = new Set(this.state.vacancies.map((vacancy) => vacancy.position).sort())
+        const postions = this.state.vacancies.map((vacancy) => vacancy.position).sort();
+        const companies = this.state.vacancies.map((vacancy) => vacancy.company).sort();
+        const vacanciesSuggestionSet = new Set([...postions, ...companies])
         let vacanciesSuggestion = [];
         vacanciesSuggestionSet.forEach( (el) => vacanciesSuggestion.push(el))
+        console.log(vacanciesSuggestion)
 
         return (
             <div className="rating-filters">
@@ -70,9 +73,9 @@ class RatingFilters extends Component {
 
                     <div className={cx(
                         'rating-filters__statuses',
-                        {'rating-filters__statuses--is-active': this.state.textFilterOpened}
+                        {'rating-filters__statuses--is-active': this.state.statusFilterOpened}
                     )}>
-                        <p className="rating-filters__statuses-text" onClick={() => this.setState({textFilterOpened: !this.state.textFilterOpened})}>
+                        <p className="rating-filters__statuses-text" onClick={() => this.setState({statusFilterOpened: !this.state.statusFilterOpened})}>
                             Status
                             <i className="fal fa-chevron-down"></i>
                         </p>

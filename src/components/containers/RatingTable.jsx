@@ -11,7 +11,12 @@ const RatingTable = (props) => {
                 <tbody>
                     { vacancies
                         .filter( (vacancy) => { return visibilityFilter.status.length ? visibilityFilter.status.includes(vacancy.status) : vacancy })
-                        .filter( (vacancy) => { return visibilityFilter.text ? vacancy.position.toLowerCase().includes(visibilityFilter.text.toLowerCase()) : vacancy})
+                        .filter( (vacancy) => { return visibilityFilter.text
+                            ? (
+                                vacancy.position.toLowerCase().includes(visibilityFilter.text.toLowerCase()) ||
+                                vacancy.company.toLowerCase().includes(visibilityFilter.text.toLowerCase())
+                            )
+                            : vacancy})
                         .map( (vacancy, id) => (
                             <RatingTableVacancy key={id} data={vacancy}/>
                         ))
