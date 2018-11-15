@@ -13,23 +13,23 @@
             "commentary": "Frontend developer at Quby you will work primarily on React stack basically and use some native tools",
             "status": "offer",
             "id": "petyu0oy44nzecb2e6rmj",
-            "companyDescription": "",
-            "companyCommentary": ""
+            "companyDescription": "Old company, very stable on the market",
+            "companyCommentary": "Big company"
         },
         {
             "position": "Senior front-end developer",
-            "company": "Epic Company",
+            "company": "Super Star inc.",
             "salary": 110000,
             "workDay": 480,
             "inTheWay": 20,
             "description": "Like it",
             "isInteresting": true,
             "requiresAdditionalStudying": true,
-            "commentary": "Frontend developer at Quby you will work primarily on React stack basically and use some native tools",
+            "commentary": "Frontend developer on React 16 stack with Redux and Mac personal machines is very nice to work with",
             "status": "offer",
             "id": "petyu0oy424nzecbe6rmj",
-            "companyDescription": "",
-            "companyCommentary": ""
+            "companyDescription": "Company was founded two years ago and is growing very fast",
+            "companyCommentary": "It delivers a lot of opportunities for growth"
         },
         {
             "position": "Fullstack developer",
@@ -40,11 +40,11 @@
             "description": "Like it very much",
             "isInteresting": true,
             "requiresAdditionalStudying": false,
-            "commentary": "Very Nice company",
+            "commentary": "I like the opportunities",
             "status": "candidate",
             "id": "k3t0mkyyata2quvlkrq5t",
-            "companyDescription": "",
-            "companyCommentary": ""
+            "companyDescription": "Company was founded two years ago and is growing very fast",
+            "companyCommentary": "It delivers a lot of opportunities for growth"
         },
         {
             "position": "Middle front-end developer",
@@ -58,8 +58,8 @@
             "commentary": "Vue.js stack must be very interescting to use and work with",
             "status": "not suitable",
             "id": "s5a0mkyyataqu2vlkrq5t",
-            "companyDescription": "",
-            "companyCommentary": ""
+            "companyDescription": "Company was founded two years ago and is growing very fast",
+            "companyCommentary": "It delivers a lot of opportunities for growth"
         },
         {
             "position": "Middle front-end developer",
@@ -70,11 +70,11 @@
             "description": "Not so interesting",
             "isInteresting": false,
             "requiresAdditionalStudying": true,
-            "commentary": "Very Nice company",
+            "commentary": "Very Nice team",
             "status": "declined",
             "id": "nna0mkyyataq2uvlkrq5t",
-            "companyDescription": "",
-            "companyCommentary": ""
+            "companyDescription": "Company was founded two years ago and is growing very fast",
+            "companyCommentary": "It delivers a lot of opportunities for growth"
         },
         {
             "position": "Senior front-end developer",
@@ -85,11 +85,11 @@
             "description": "Not so interesting",
             "isInteresting": true,
             "requiresAdditionalStudying": true,
-            "commentary": "Very Nice company",
+            "commentary": "Very Nice team here",
             "status": "declined",
             "id": "nna0mkyyataquv2lkrq5t",
-            "companyDescription": "",
-            "companyCommentary": ""
+            "companyDescription": "Company was founded two years ago and is growing very fast",
+            "companyCommentary": "It delivers a lot of opportunities for growth"
         },
         {
             "position": "Senior front-end developer",
@@ -100,11 +100,11 @@
             "description": "Not so interesting",
             "isInteresting": true,
             "requiresAdditionalStudying": true,
-            "commentary": "Very Nice company",
+            "commentary": "Very Nice company and office",
             "status": "not suitable",
             "id": "nna0mkyyataquvlkr2q5t",
-            "companyDescription": "",
-            "companyCommentary": ""
+            "companyDescription": "Company was founded two years ago and is growing very fast",
+            "companyCommentary": "It delivers a lot of opportunities for growth"
         }
     ],
     "visibilityFilter": {

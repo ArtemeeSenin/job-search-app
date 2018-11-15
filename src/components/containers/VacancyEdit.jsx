@@ -2,24 +2,35 @@ import React from 'react'
 import { withRouter } from 'react-router-dom'
 import VacancyForm from './VacancyForm'
 import { connect } from 'react-redux'
-import { addVacancy } from '../../actions/vacancies'
+import { addVacancy, updateVacancy, deleteVacancy } from '../../actions/vacancies'
 
 const VacancyEdit = (props) => {
-    const { history, dispatch } = props;
-    const submit = values => {
+    const { history, match, dispatch } = props;
+    const data = props.vacancies.filter((vacancy) => { return vacancy.id === match.params.id })[0]
+    const submit = (values) => {
         console.log(JSON.stringify(values, null, 2))
-        dispatch(addVacancy(values));
+
+        match.params.id
+            ? dispatch(updateVacancy(values))
+            : dispatch(addVacancy(values))
+
+        history.push('/rating')
 
     }
+    const deleteAction = (id) => {
+        console.log(id)
+        dispatch(deleteVacancy(id));
+        history.push('/rating')
+    }
     return(
-        <VacancyForm onSubmit={submit} history={history}/>
+        <VacancyForm onSubmit={submit} history={history} match={match} initialValues={data} deleteAction={deleteAction}/>
     );
 }
 
-// function mapStateToProps(props){
-//     console.log('PROPS', props)
-//     return {
-
-//     }
-// }
-export default connect()(withRouter(VacancyEdit));
+function mapStateToProps(state){
+    const { vacancies } = state
+    return {
+        vacancies
+    }
+}
+export default connect(mapStateToProps)(withRouter(VacancyEdit));

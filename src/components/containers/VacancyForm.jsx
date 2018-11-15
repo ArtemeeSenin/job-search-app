@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import { reduxForm } from 'redux-form'
 import CardHeader from './CardHeader'
 import { Field } from 'redux-form'
@@ -8,11 +9,13 @@ const toNumber = value => parseInt(value);
 // const minutesToHours = value => Math.floor(value / 60)
 
 const VacancyForm = (props) => {
-    const { handleSubmit, history } = props;
+    const { handleSubmit, deleteAction, history, match } = props;
+    const id = match.params.id ? match.params.id : null;
+    console.log('ACTION', deleteAction, id)
     return (
         <article className="card-info">
             <CardHeader data={{pageName: "Add new vacancy"}} />
-            <form onSubmit={handleSubmit} className="linear-form" noValidate id="vacancy">
+            <form onSubmit={handleSubmit} className="linear-form" noValidate id="vacancy" autoComplete="off">
                 <Field
                     name="position"
                     component={Text}
@@ -101,7 +104,7 @@ const VacancyForm = (props) => {
             <footer className="card-info__footer">
                 <div className="card-info__footer-buttons-container">
                     <button type="submit" form="vacancy" className="button">Save</button>
-                    <button className="button">Delete</button>
+                    {id ? <button className="button" onClick={(e) => { deleteAction(id) }}>Delete</button> : null}
                     <button onClick={ history.goBack } className="button">Cancel</button>
                 </div>
             </footer>

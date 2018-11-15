@@ -13,10 +13,10 @@ class VacancyCard extends Component {
         }
     }
     render() {
-        console.log(this.state.vacancy)
+        const deleteAction = this.props.deleteAction
         const data = this.state.vacancy;
         const features = [];
-        if (data.workDay) features.push({type: 'clock', text: ~~(data.workDay / 60) + 'h. work day'})
+        if (data.workDay) features.push({ type: 'clock', text: Math.ceil(data.workDay / 60) + 'h. work day'})
         if (data.inTheWay) features.push({type: 'bus', text: data.inTheWay + 'm. in the way'})
         if (data.isInteresting) features.push({type: data.isInteresting ? 'smile' : 'frown', text: 'Is interesting'})
         if (data.requiresAdditionalStudying) features.push({type: 'graduation-cap', text: 'Requires additional studying'})
@@ -29,7 +29,7 @@ class VacancyCard extends Component {
                     <div className="card-info__footer-buttons-container">
                         <Link className="button" to='/rating'>See rating</Link>
                         <Link className="button" to={`/vacancy/edit/${data.id }`}>Edit</Link>
-                        <Link className="button" to={`/delete${data.id}`}>Delete</Link>
+                        <button className="button" onClick={ deleteAction }>Delete</button>
                     </div>
                 </footer>
             </article>
@@ -46,36 +46,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(VacancyCard);
-
-
-    // const data = {
-    //     position: "Senior front-end developer",
-    //     company: "Epic Company",
-    //     salaryNumber: "220 000",
-    //     salaryCurrency: "₽",
-    //     status: "Offer",
-    //     workingDay: "8 h.",
-    //     inTheWay: "1 h. 20 min.",
-    //     additionalStudying: true,
-    //     interesting: "smile",
-    //     comment: "Frontend developer at Quby you will work primarily on our hybrid mobile application which is targeted at our energy utility’s end users. Frontend developer at Quby you will work primarily on our hybrid mobile application which is targeted at our energy utility’s end users."
-    // }
-
-    // const features = [
-    //     {
-    //         type: "clock",
-    //         text: "8 h.working day"
-    //     },
-    //     {
-    //         type: "bus",
-    //         text: "1 h. 20 min. in the way"
-    //     },
-    //     {
-    //         type: "graduation-cap",
-    //         text: "Additional studying is required"
-    //     },
-    //     {
-    //         type: "smile",
-    //         text: "Interesting"
-    //     },
-    // ]

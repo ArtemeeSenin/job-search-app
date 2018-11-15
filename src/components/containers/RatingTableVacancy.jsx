@@ -23,7 +23,7 @@ const RatingTableVacancy = ({ data }) => (
                     <ul className="vacancy-summary__info-list">
                         <li className="vacancy-summary__info-list-item">
                             <i className="fal fa-clock"></i>
-                            <span className="vacancy-summary__info-list-item-text">{data.workDay / 60} h. work day</span>
+                            <span className="vacancy-summary__info-list-item-text">{Math.ceil(data.workDay / 60)} h. work day</span>
                         </li>
                         <li className="vacancy-summary__info-list-item">
                             <i className="fal fa-bus"></i>
