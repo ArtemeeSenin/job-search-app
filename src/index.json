@@ -4,7 +4,7 @@
         {
             "position": "Senior front-end developer",
             "company": "Epic Company",
-            "salary": 110000,
+            "salary": 120000,
             "workDay": 480,
             "inTheWay": 40,
             "description": "Like it",
@@ -107,7 +107,10 @@
             "companyCommentary": ""
         }
     ],
-    "visibilityFilter": [],
+    "visibilityFilter": {
+        "text": "",
+        "status": []
+    },
     "form": {},
     "loading": {}
 }

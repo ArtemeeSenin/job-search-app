@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('not this page');
     }
 
-    function autocomplete (el, dataFull) {
+    /*function autocomplete (el, dataFull) {
         let currentFocus;
         let field = el.querySelector('.rating-filters__search-line-input');
 
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
         autocomplete(document.querySelector('.rating-filters__search'), variations)
     } catch {
         console.log('not this page');
-    }
+    }*/
 
     document.querySelectorAll('.comment-toggling').forEach( (block) => {
         const el = block.querySelector('.comment-toggling__text');
