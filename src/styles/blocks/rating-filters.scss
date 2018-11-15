@@ -89,12 +89,12 @@
         transition: box-shadow .2s ease;
 
         &--is-active {
-            @include drop-shadow();
+            // @include drop-shadow();
             .rating-filters__dropdown-list {
                 max-height: 400px;
                 transform: scaleY(1);
                 font-size: $font-size-large;
-                @include drop-shadow();
+                // @include drop-shadow();
 
                 &--floating {
                     max-height: initial;
@@ -117,7 +117,7 @@
             padding: 10px 30px 12px 15px;
             border: 1px solid $color-background-primary-inverse;
             background: inherit;
-            box-shadow: inset 2px 2px 10px rgba(59, 58, 56, 0.5);
+            // box-shadow: inset 2px 2px 10px rgba(59, 58, 56, 0.5);
             transition: box-shadow .2s ease, filter .1s ease;
 
             &:hover {
