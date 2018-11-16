@@ -24,15 +24,20 @@ class App extends Component {
     this.setState({ user: null }, () => this.props.history.push('/sign-in'))
   }
   render() {
-    console.log(this.props)
+    const locationPath = this.props.location.pathname;
+    console.log(locationPath)
     return (
       <Fragment>
-          <NavMenu />
+        { locationPath.includes('account') ? <NavMenu /> : null}
           <main className={cx(
-            'page-content'
+            'page-content',
+          { 'page-content--background': !locationPath.includes('account')},
+          { 'page-content--bg-variation-light': locationPath.includes('sign-in')},
+          { 'page-content--vertical-fields': !locationPath.includes('account')}
           )}>
             <div className={cx(
-              'container'
+              'container',
+            { 'container--vertical-padding': !locationPath.includes('account') }
             )}>
               <Switch>
                 <Route exact path="/" component={ Account } />
