@@ -3,7 +3,7 @@ import React from 'react'
 function createMarkup(markup) { return { __html: markup }; };
 
 const CardContent = ({data}) => {
-    const logo = data.companyLogo ? '<img src="' + data.companyLogo + '" style="float: left; width: 74px; margin-right: 10px; margin-bottom: 0" alt={data.company} />' : '';
+    const logo = data.companyLogo ? `<img src="${ data.companyLogo }" class="card-info__logo" alt="${ data.company }" />` : '';
     return (
         <div className="card-info__content card-info__content--column">
             <section className="card-info__comment">
