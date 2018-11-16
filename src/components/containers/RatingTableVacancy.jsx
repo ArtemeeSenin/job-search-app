@@ -18,7 +18,7 @@ class RatingTableVacancy extends Component{
                 <td className={`vacancy-summary vacancy-summary--${data.status.toLowerCase().split(' ').join('-')} rating-table__table-data`}>
                     <div className="vacancy-summary__position">
                         <h2 className="vacancy-summary__position-name"><Link className="vacancy-summary__link" to={`/account/vacancy/${data.id}`}>{data.position}</Link></h2>
-                        <h3 className="vacancy-summary__position-company"><Link className="vacancy-summary__link" to={`/company/${data.id}`}>{data.company}</Link></h3>
+                        <h3 className="vacancy-summary__position-company"><Link className="vacancy-summary__link" to={`/account/company/${data.id}`}>{data.company}</Link></h3>
                     </div>
                     <div className="vacancy-summary__conditions">
                         <div className="vacancy-summary__conditions-main-info-contrainer">

@@ -44,7 +44,7 @@ class App extends Component {
                 <Route path="/reset-password" component={ ResetPassword } />
                 <Route path="/rating" component={ Rating } />
                 <Route path="/account/vacancy" component={ Vacancy } />
-                <Route path="/company" component={ Company } />
+                <Route path="/account/company" component={ Company } />
                 <Route path="*" children={<div>Not Found</div>}
                 />
               </Switch>
