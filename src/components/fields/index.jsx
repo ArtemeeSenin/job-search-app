@@ -110,3 +110,16 @@ export const FilterCheckbox = props => {
         </li>
     )
 }
+
+export const Search = props => {
+    const { input } = props;
+    console.log(props)
+    return (
+        <input
+            {...input}
+            type="text"
+            className="rating-filters__search-line-input"
+            placeholder="Start search"
+        />
+    )
+}
