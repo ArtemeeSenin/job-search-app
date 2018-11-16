@@ -3,7 +3,7 @@
     "vacancies": [
         {
             "position": "Senior front-end developer",
-            "company": "Epic Company",
+            "company": "EPAM Systems",
             "salary": 120000,
             "workDay": 480,
             "inTheWay": 40,
@@ -13,23 +13,25 @@
             "commentary": "Frontend developer at Quby you will work primarily on React stack basically and use some native tools",
             "status": "offer",
             "id": "petyu0oy44nzecb2e6rmj",
-            "companyDescription": "Old company, very stable on the market",
-            "companyCommentary": "Big company"
+            "companyDescription": "<p><b>EPAM Systems, Inc.</b>, also known as EPAM, is a global provider of software engineering and IT consulting services headquartered in Newtown, Pennsylvania, United States. The company has software development centers and branch offices in North America, Europe, Asia and Australia.\n</p>",
+            "companyCommentary": "Big company",
+            "companyLogo": "https://logo.clearbit.com/epam.com"
         },
         {
-            "position": "Senior front-end developer",
-            "company": "Super Star inc.",
-            "salary": 110000,
-            "workDay": 480,
-            "inTheWay": 20,
+            "position": "Tutor",
+            "company": "Epic Skills",
+            "salary": 40000,
+            "workDay": 240,
+            "inTheWay": 10,
             "description": "Like it",
             "isInteresting": true,
-            "requiresAdditionalStudying": true,
+            "requiresAdditionalStudying": false,
             "commentary": "Frontend developer on React 16 stack with Redux and Mac personal machines is very nice to work with",
             "status": "offer",
             "id": "petyu0oy424nzecbe6rmj",
-            "companyDescription": "Company was founded two years ago and is growing very fast",
-            "companyCommentary": "It delivers a lot of opportunities for growth"
+            "companyDescription": "The idea of the school is to provide high-quality education in an exciting format, which allows students to find new areas of development and improve the level of IT-education in the market",
+            "companyCommentary": "It delivers a lot of opportunities for growth",
+            "companyLogo": "https://logo.clearbit.com/epixx.ru"
         },
         {
             "position": "Fullstack developer",

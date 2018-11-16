@@ -8,7 +8,7 @@ import SignUp from './components/containers/SignUp'
 import ResetPassword from './components/containers/ResetPassword'
 import Rating from './components/Rating'
 import Vacancy from './components/Vacancy'
-// import Company from './components/Company'
+import Company from './components/Company'
 // import CompanyCard from './components/CompanyCard'
 // import CompanyEdit from './components/CompanyEdit'
 
@@ -44,7 +44,7 @@ class App extends Component {
                 {/* <Route path="/vacancy/edit/:id" component={ Vacancy } />
                 <Route path="/vacancy/delete/:id" component={ Vacancy } />
                 <Route path="/vacancy/:id" component={ Vacancy } /> */}
-                {/* <Route path="/company" component={ Company } /> */}
+                <Route path="/company" component={ Company } />
                 <Route render={props => <SignIn onLogin={ this.login } />} />
               </Switch>
             </div>

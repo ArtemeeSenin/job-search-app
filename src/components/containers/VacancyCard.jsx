@@ -26,7 +26,7 @@ class VacancyCard extends Component {
 
         return(
             <article className="card-info">
-                <CardHeader data={{pageName: data.position, company: data.company, salary: data.salary}}/>
+                <CardHeader data={{pageName: data.position, company: data.company, salary: data.salary, id: data.id}}/>
                 <CardContent data={data} features={features}/>
                 <footer className="card-info__footer">
                     <div className="card-info__footer-buttons-container">

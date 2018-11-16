@@ -118,5 +118,6 @@ class RatingFilters extends Component {
 }
 
 export default connect()(reduxForm({
-    form: 'filters'
+    form: 'filters',
+    destroyOnUnmount: false
 })(RatingFilters));

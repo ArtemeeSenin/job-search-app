@@ -5,7 +5,7 @@ const CardHeader = ({ data }) => (
     <header className="card-info__header">
         <div className="card-info__header-vacancy">
             <h1 className="card-info__header-vacancy-position">{ data.pageName }</h1>
-            {data.company ? <h2 className="card-info__header-vacancy-company"><Link to="/company/1">{ data.company }</Link></h2> : null}
+            {data.company ? <h2 className="card-info__header-vacancy-company"><Link to={`/company/${data.id}`}>{ data.company }</Link></h2> : null}
         </div>
         {data.salary ?
             <div className="card-info__header-salary">

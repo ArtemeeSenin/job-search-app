@@ -1,6 +1,6 @@
 import React from 'react'
 import { reduxForm } from 'redux-form'
-import CompanyForm from './containers/CompanyForm'
+import CompanyForm from './CompanyForm'
 
 const CompanyEdit = () => (
     <CompanyForm data={{ name: 'Edit company' }} />
