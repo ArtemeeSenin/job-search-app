@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
+import cx from 'classnames'
 // import PrivateRoute from './components/containers/PrivateRoute'
 import NavMenu from './components/containers/NavMenu'
 import SignIn from './components/containers/SignIn'
@@ -9,15 +10,12 @@ import ResetPassword from './components/containers/ResetPassword'
 import Rating from './components/Rating'
 import Vacancy from './components/Vacancy'
 import Company from './components/Company'
-// import CompanyCard from './components/CompanyCard'
-// import CompanyEdit from './components/CompanyEdit'
-
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      user: 'Artem'
+      // user: 'Artem'
     }
   }
   login = (user) => {
@@ -28,11 +26,16 @@ class App extends Component {
     this.setState({ user: null }, () => this.props.history.push('/sign-in'))
   }
   render() {
+    console.log(this.props)
     return (
       <Fragment>
           <NavMenu />
-          <main className="page-content">
-            <div className="container">
+          <main className={cx(
+            'page-content'
+          )}>
+            <div className={cx(
+              'container'
+            )}>
               <Switch>
                 <Route exact path="/" component={ Rating } />
                 <Route path="/sign-in" render={props => <SignIn onLogin={ this.login } />} />
@@ -41,11 +44,9 @@ class App extends Component {
                 <Route path="/reset-password" component={ ResetPassword } />
                 <Route path="/rating" component={ Rating } />
                 <Route path="/vacancy" component={ Vacancy } />
-                {/* <Route path="/vacancy/edit/:id" component={ Vacancy } />
-                <Route path="/vacancy/delete/:id" component={ Vacancy } />
-                <Route path="/vacancy/:id" component={ Vacancy } /> */}
                 <Route path="/company" component={ Company } />
-                <Route render={props => <SignIn onLogin={ this.login } />} />
+                <Route path="*" children={<div>Not Found</div>}
+                />
               </Switch>
             </div>
           </main>

@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form'
 import { Text } from '../fields'
 
 const SignInForm = () => (
-    <form className="form" action="#" method="POST">
+    <form className="form" autoComplete="off">
         <Field
             name="login"
             component={Text}
