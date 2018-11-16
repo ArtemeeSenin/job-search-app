@@ -23,7 +23,7 @@ class RatingFilters extends Component {
     useSuggestion(suggestion) {
         console.log(suggestion)
         this.props.dispatch(change('filters', 'textFilter', suggestion))
-        this.setState({searchValue: ''})
+        this.setState({ searchValue: '', textFilterOpened: false })
     }
     onSubmit = (values) => {
         this.props.dispatch(setVisibilityFilterStatus(values.status));
@@ -36,20 +36,25 @@ class RatingFilters extends Component {
         return (
             <div className="rating-filters">
                 <form onSubmit={this.state.handleSubmit(this.onSubmit)} className="rating-filters__form" autoComplete="off" noValidate>
-                    <div className="rating-filters__search rating-filters__search--is-active">
+                    <div className={ cx(
+                        'rating-filters__search',
+                        { 'rating-filters__search--is-active': this.state.searchValue }
+                    )}>
                         <div className="rating-filters__search-line">
                             <Field
                                 name="textFilter"
                                 component={ Search }
                                 onChange={(e, value) => {
-                                    this.setState({searchValue: value})
-                                    console.log(this.state.searchValue)
+                                    this.setState({ searchValue: value, textFilterOpened: true})
                                 }}
+                                // onBlur={ () => {
+                                //     this.setState({ textFilterOpened: false })
+                                // }}
                             />
                             <i className="fal fa-search"></i>
                         </div>
                         <ul className="rating-filters__dropdown-list rating-filters__dropdown-list--floating">
-                            { this.state.searchValue !== ''
+                            { this.state.textFilterOpened
                             ? vacanciesSuggestion
                                 .filter( (vacancy) => { return vacancy.toLowerCase().includes(this.state.searchValue.toLowerCase())})
                                 .map( (vacancy) =>
