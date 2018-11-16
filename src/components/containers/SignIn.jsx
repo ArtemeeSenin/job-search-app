@@ -4,6 +4,16 @@ import Logo from './Logo'
 import SignInForm from './SignInForm'
 
 class SignIn extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+
+        }
+        this.onSubmit = this.onSubmit.bind(this)
+    }
+    onSubmit(e) {
+        this.props.onLogin()
+    }
     render() {
         return (
             <div className="sign sign--bg-variation-light">
@@ -11,7 +21,7 @@ class SignIn extends Component {
                     <Logo className={"logo--inverse"} />
                 </Link>
                 <h1 className="heading heading--xxx-large heading--text-center heading--color-inverse">Sign in</h1>
-                <SignInForm />
+                <SignInForm onSubmit={ this.onSubmit } />
             </div>
         )
     }

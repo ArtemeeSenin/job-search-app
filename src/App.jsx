@@ -18,10 +18,10 @@ class App extends Component {
   }
   login = (user) => {
     // localStorage.setItem('user', JSON.stringify(user));
-    this.setState({ user }, () => this.props.history.push('/account/rating'))
+    // () => this.props.history.push('/account/rating')
   }
   logout = () => {
-    this.setState({ user: null }, () => this.props.history.push('/sign-in'))
+    // this.setState({ user: null }, () => this.props.history.push('/sign-in'))
   }
   render() {
     const locationPath = this.props.location.pathname;
@@ -32,7 +32,7 @@ class App extends Component {
           <main className={cx(
             'page-content',
           { 'page-content--background': !locationPath.includes('account')},
-          { 'page-content--bg-variation-light': locationPath.includes('sign-in')},
+          // { 'page-content--bg-variation-light': locationPath.includes('sign-in')},
           { 'page-content--vertical-fields': !locationPath.includes('account')}
           )}>
             <div className={cx(
