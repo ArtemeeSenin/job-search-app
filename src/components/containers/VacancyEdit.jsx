@@ -14,12 +14,12 @@ const VacancyEdit = (props) => {
             ? dispatch(updateVacancy(values))
             : dispatch(addVacancy(values))
 
-        history.push('/rating')
+        history.push('/account/rating')
 
     }
     const deleteAction = (id) => {
         dispatch(deleteVacancy(id));
-        history.push('/rating')
+        history.push('/account/rating')
     }
     return(
         <VacancyForm onSubmit={submit} history={history} match={match} initialValues={data} deleteAction={deleteAction}/>

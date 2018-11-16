@@ -19,7 +19,7 @@ class CompanyCard extends Component {
                 <CardContent data={data} />
                 <footer className="card-info__footer">
                     <div className="card-info__footer-buttons-container">
-                        <Link className="button" to='/rating'>See rating</Link>
+                        <Link className="button" to='/account/rating'>See rating</Link>
                         <Link className="button" to={`/vacancy/edit/${data.id}`}>Edit</Link>
                     </div>
                 </footer>

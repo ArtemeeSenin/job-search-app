@@ -6,7 +6,7 @@ const NavMenu = () => (
     <header className="header">
         <div className="container">
             <nav className="main-nav">
-                <NavLink to="/rating" className="main-nav__logo-container">
+                <NavLink to="/account/rating" className="main-nav__logo-container">
                     <Logo />
                 </NavLink>
                 <button className="hamburger hamburger--collapse" type="button">
@@ -15,7 +15,7 @@ const NavMenu = () => (
                     </span>
                 </button>
                 <ul className="nav-list">
-                    <li className="nav-list__item"><NavLink to="/rating" className="nav-list__item-link">Rating</NavLink></li>
+                    <li className="nav-list__item"><NavLink to="/account/rating" className="nav-list__item-link">Rating</NavLink></li>
                     <li className="nav-list__item"><NavLink to="/vacancy/add" className="nav-list__item-link">Add new vacancy</NavLink></li>
                     <li className="nav-list__item"><NavLink to="/logout" className="nav-list__item-link">Logout</NavLink></li>
                 </ul>

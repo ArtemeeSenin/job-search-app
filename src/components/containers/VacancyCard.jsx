@@ -14,7 +14,7 @@ class VacancyCard extends Component {
     }
     deleteAction(id){
         this.props.dispatch(deleteVacancy(id));
-        this.props.history.push('/rating')
+        this.props.history.push('/account/rating')
     }
     render() {
         const data = this.state.vacancy;
@@ -30,7 +30,7 @@ class VacancyCard extends Component {
                 <CardContent data={data} features={features}/>
                 <footer className="card-info__footer">
                     <div className="card-info__footer-buttons-container">
-                        <Link className="button" to='/rating'>See rating</Link>
+                        <Link className="button" to='/account/rating'>See rating</Link>
                         <Link className="button" to={`/vacancy/edit/${data.id }`}>Edit</Link>
                         <button className="button" onClick={(e) => { this.deleteAction(data.id)}}>Delete</button>
                     </div>

@@ -20,7 +20,7 @@ class App extends Component {
   }
   login = (user) => {
     // localStorage.setItem('user', JSON.stringify(user));
-    this.setState({ user }, () => this.props.history.push('/rating'))
+    this.setState({ user }, () => this.props.history.push('/account/rating'))
   }
   logout = () => {
     this.setState({ user: null }, () => this.props.history.push('/sign-in'))
