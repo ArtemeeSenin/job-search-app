@@ -3,6 +3,9 @@ import { reduxForm } from 'redux-form'
 import CardHeader from './CardHeader'
 import { Field } from 'redux-form'
 import { Text, Textarea, Checkbox, Radio } from '../fields'
+import {
+    required
+} from '../validation'
 
 const toNumber = value => parseInt(value);
 // const minutesToHours = value => Math.floor(value / 60)
@@ -10,7 +13,7 @@ const toNumber = value => parseInt(value);
 const VacancyForm = (props) => {
     const { handleSubmit, deleteAction, history, match } = props;
     const id = match.params.id ? match.params.id : null;
-    console.log('ACTION', deleteAction, id)
+
     return (
         <article className="card-info">
             <CardHeader data={{pageName: "Add new vacancy"}} />
@@ -22,6 +25,7 @@ const VacancyForm = (props) => {
                     label="Name"
                     placeholder="Offered position"
                     inputModifiers="text-input__field--dark-border text-input__field--fw-normal"
+                    validate={[required]}
                 />
                 <Field
                     name="company"
@@ -30,6 +34,7 @@ const VacancyForm = (props) => {
                     label="Company"
                     placeholder="Company name"
                     inputModifiers="text-input__field--dark-border text-input__field--fw-normal"
+                    validate={[required]}
                 />
                 <Field
                     name="salary"
@@ -39,6 +44,7 @@ const VacancyForm = (props) => {
                     placeholder="Salary amount"
                     inputModifiers="text-input__field--dark-border text-input__field--fw-normal"
                     normalize={toNumber}
+                    validate={[required]}
                 />
                 <Field
                     name="workDay"
@@ -48,6 +54,7 @@ const VacancyForm = (props) => {
                     placeholder="The duration of the working day"
                     inputModifiers="text-input__field--dark-border text-input__field--fw-normal"
                     normalize={ toNumber }
+                    validate={[required]}
                 />
                 <Field
                     name="inTheWay"
@@ -57,6 +64,7 @@ const VacancyForm = (props) => {
                     placeholder="Minutes"
                     inputModifiers="text-input__field--dark-border text-input__field--fw-normal"
                     normalize={ toNumber }
+                    validate={[required]}
                 />
                 <Field
                     name="description"
@@ -88,6 +96,7 @@ const VacancyForm = (props) => {
                     rows="3"
                     cols="45"
                     inputModifiers="text-input__field--dark-border text-input__field--fw-normal text-input__field--area"
+                    validate={[required]}
                 />
                 <Radio
                     label="Status"

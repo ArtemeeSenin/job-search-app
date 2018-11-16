@@ -2,6 +2,8 @@
     margin-bottom: $font-size-xxx-large;
     color: inherit;
 
+    transition: color .3s ease, border .3s ease;
+
     &--error {
         // .text-input__field {
         //     background-color: rgba($color-error, .4);
@@ -14,6 +16,13 @@
                 right: 0; bottom: -22px;
             }
         }*/
+
+        color: darken($color-error, 20);
+
+        & .text-input__field {
+            color: darken($color-error, 20);
+        }
+
         .text-input__message {
             transform: scale(1);
         }
@@ -68,7 +77,7 @@
         color: inherit;
         text-align: left;
         font-size: $font-size-large;
-        font-weight: 300;    
+        font-weight: 300;
     }
 
     &__label {
@@ -78,7 +87,7 @@
         color: inherit;
         text-align: left;
         font-size: $font-size-large;
-        font-weight: 300;     
+        font-weight: 300;
     }
     &__field {
         display: block;
@@ -95,13 +104,16 @@
         border: 0px solid $color-text-primary-inverse;
         border-bottom-width: 1px;
         outline: none;
+        border-color: currentColor;
+        transition: color .3s ease, border .3s ease;
 
         &::placeholder {
             color: rgba($color-text-primary-inverse, .6);
         }
 
         &--dark-border {
-            border-color: $color-background-primary;
+            color: $color-background-primary;
+            border-color: currentColor;
 
             &::placeholder {
                 color: rgba($color-text-primary, .6);
@@ -111,7 +123,7 @@
         &--fw-normal {
             font-weight: normal;
         }
-        
+
         &--area {
             margin-top: $font-size-small;
             resize:vertical;
@@ -121,18 +133,18 @@
             width: auto;
             max-width: 40%;
             padding-right: 0;
-        } 
+        }
     }
     &__message {
         position: absolute;
-        left: 0; bottom: -26px;
+        left: 0; bottom: -23px;
         width: 100%;
         box-sizing: border-box;
         padding: 4px 10px;
         background-color: $color-error;
         font-size: $font-size-medium;
         font-weight: normal;
-        color: $color-text-primary-inverse;     
+        color: $color-text-primary-inverse;
         transform: scale(0);
         transform-origin: 10px 0;
         transition: transform .3s ease;

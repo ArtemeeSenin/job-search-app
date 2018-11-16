@@ -1,11 +1,15 @@
 import React from 'react'
 import { Field } from 'redux-form'
 import capitalize from 'capitalize'
+import cx from 'classnames'
 
 export const Text = props => {
     const { label, placeholder, input, inputModifiers, type, meta } = props
     return (
-        <div className="text-input">
+        <div className={cx(
+            'text-input',
+            {'text-input--error': (meta.error && meta.touched && !meta.active)}
+        )}>
             <label className="text-input__label">
                 { label }
                 <input
@@ -14,9 +18,10 @@ export const Text = props => {
                     className={`text-input__field ${inputModifiers}`}
                     placeholder={ placeholder }
                 />
-                {( meta.error && meta.touched && !meta.active ) && (
-                    <span className="text-input__message">{ meta.error }</span>
-                )}
+                    {console.log(props, meta)}
+                {/* {( meta.error && meta.touched && !meta.active ) && ( */}
+                    <span className="text-input__message">{ meta.error ? meta.error : '' }</span>
+                {/* )} */}
             </label>
         </div>
     )
@@ -24,6 +29,7 @@ export const Text = props => {
 
 export const Textarea = props => {
     const { label, placeholder, rows, cols, input, inputModifiers, meta } = props;
+
     return (
         <div className="text-input">
             <label className="text-input__label">
