@@ -5,10 +5,10 @@ import VacancyEdit from './containers/VacancyEdit'
 
 const Vacancy = () => (
     <Switch>
-        <Route path="/vacancy/add" component={ VacancyEdit } />
-        <Route path="/vacancy/edit/:id" component={ VacancyEdit } />
-        <Route path="/vacancy/delete/:id" component={ VacancyCard } />
-        <Route path="/vacancy/:id" component={ VacancyCard } />
+        <Route path="/account/vacancy/add" component={ VacancyEdit } />
+        <Route path="/account/vacancy/edit/:id" component={ VacancyEdit } />
+        <Route path="/account/vacancy/delete/:id" component={ VacancyCard } />
+        <Route path="/account/vacancy/:id" component={ VacancyCard } />
     </Switch>
 )
 export default Vacancy;

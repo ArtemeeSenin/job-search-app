@@ -43,7 +43,7 @@ class App extends Component {
                 <Route path="/sign-up" component={ SignUp } />
                 <Route path="/reset-password" component={ ResetPassword } />
                 <Route path="/rating" component={ Rating } />
-                <Route path="/vacancy" component={ Vacancy } />
+                <Route path="/account/vacancy" component={ Vacancy } />
                 <Route path="/company" component={ Company } />
                 <Route path="*" children={<div>Not Found</div>}
                 />
