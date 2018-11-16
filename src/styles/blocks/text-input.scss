@@ -50,7 +50,9 @@
     }
 
     &--radio {
+        position: relative;
         margin-bottom: $font-size-regular;
+        padding-bottom: 6px;
 
         .text-input__label {
             margin-bottom: $font-size-xx-small;

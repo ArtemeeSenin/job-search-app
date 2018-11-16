@@ -1,10 +1,11 @@
 import React from 'react'
 import { reduxForm } from 'redux-form'
 import CardHeader from './CardHeader'
-import { Field } from 'redux-form'
+import { Field, FieldArray } from 'redux-form'
 import { Text, Textarea, Checkbox, Radio } from '../fields'
 import {
-    required
+    required,
+    requiredRadio
 } from '../validation'
 
 const toNumber = value => parseInt(value);
@@ -98,15 +99,18 @@ const VacancyForm = (props) => {
                     inputModifiers="text-input__field--dark-border text-input__field--fw-normal text-input__field--area"
                     validate={[required]}
                 />
-                <Radio
+                <FieldArray
                     label="Status"
-                    name="status"
-                    list={[
+                    name="statusRadio"
+                    radioName="status"
+                    fields={[
                         "candidate",
                         "offer",
                         "declined",
                         "not suitable"
                     ]}
+                    component={Radio}
+                    validate={[requiredRadio]}
                 />
             </form>
             <footer className="card-info__footer">

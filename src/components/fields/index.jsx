@@ -2,6 +2,10 @@ import React from 'react'
 import { Field } from 'redux-form'
 import capitalize from 'capitalize'
 import cx from 'classnames'
+import {
+    required,
+    requiredRadio
+} from '../validation'
 
 export const Text = props => {
     const { label, placeholder, input, inputModifiers, type, meta } = props
@@ -18,10 +22,7 @@ export const Text = props => {
                     className={`text-input__field ${inputModifiers}`}
                     placeholder={ placeholder }
                 />
-                    {console.log(props, meta)}
-                {/* {( meta.error && meta.touched && !meta.active ) && ( */}
-                    <span className="text-input__message">{ meta.error ? meta.error : '' }</span>
-                {/* )} */}
+                <span className="text-input__message">{ meta.error ? meta.error : '' }</span>
             </label>
         </div>
     )
@@ -31,7 +32,10 @@ export const Textarea = props => {
     const { label, placeholder, rows, cols, input, inputModifiers, meta } = props;
 
     return (
-        <div className="text-input">
+        <div className={cx(
+            'text-input',
+            { 'text-input--error': (meta.error && meta.touched && !meta.active) }
+        )}>
             <label className="text-input__label">
                 { label }
                 <textarea
@@ -41,9 +45,7 @@ export const Textarea = props => {
                     className={`text-input__field ${ inputModifiers }`}
                     placeholder={ placeholder }
                 ></textarea>
-                {(meta.error && meta.touched && !meta.active) && (
-                    <span className="text-input__message">{meta.error}</span>
-                )}
+                <span className="text-input__message">{meta.error ? meta.error : ''}</span>
             </label>
         </div>
     )
@@ -81,20 +83,27 @@ const RadioButton = props => {
 }
 
 export const Radio = props => {
-    const { label, name, list } = props;
+    const { label, radioName, meta } = props;
+    const list = props.fields;
+    console.log(props.meta)
     return (
-        <div className="text-input text-input--radio">
+        <div className={cx(
+            'text-input',
+            'text-input--radio',
+            { 'text-input--error': (meta.error && meta.submitFailed && !meta.active) }
+        )}>
             <p className="text-input__name">{ label }</p>
             {list.map( (field, key) => (
                 <Field
                     type="radio"
-                    name={name}
+                    name={radioName}
                     value={field}
                     component={RadioButton}
                     key={key}
+                    validate={[requiredRadio]}
                 />
             ))}
-
+            <span className="text-input__message">{meta.error ? meta.error : ''}</span>
         </div>
     )
 }
@@ -119,7 +128,6 @@ export const FilterCheckbox = props => {
 
 export const Search = props => {
     const { input } = props;
-    console.log(props)
     return (
         <input
             {...input}
