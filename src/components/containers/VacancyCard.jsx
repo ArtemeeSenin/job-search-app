@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import CardHeader from './CardHeader'
 import CardContent from './CardContent'
-
+import { deleteVacancy } from '../../actions/vacancies'
 
 class VacancyCard extends Component {
     constructor(props){
@@ -12,8 +12,11 @@ class VacancyCard extends Component {
             vacancy: props.vacancies.filter((vacancy) => { return vacancy.id === props.match.params.id })[0]
         }
     }
+    deleteAction(id){
+        this.props.dispatch(deleteVacancy(id));
+        this.props.history.push('/rating')
+    }
     render() {
-        const deleteAction = this.props.deleteAction
         const data = this.state.vacancy;
         const features = [];
         if (data.workDay) features.push({ type: 'clock', text: Math.ceil(data.workDay / 60) + 'h. work day'})
@@ -29,7 +32,7 @@ class VacancyCard extends Component {
                     <div className="card-info__footer-buttons-container">
                         <Link className="button" to='/rating'>See rating</Link>
                         <Link className="button" to={`/vacancy/edit/${data.id }`}>Edit</Link>
-                        <button className="button" onClick={ deleteAction }>Delete</button>
+                        <button className="button" onClick={(e) => { this.deleteAction(data.id)}}>Delete</button>
                     </div>
                 </footer>
             </article>

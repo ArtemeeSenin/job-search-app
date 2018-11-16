@@ -1,5 +1,4 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
 import { reduxForm } from 'redux-form'
 import CardHeader from './CardHeader'
 import { Field } from 'redux-form'

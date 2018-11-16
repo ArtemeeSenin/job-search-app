@@ -7,7 +7,7 @@ export default (state = [], action) => {
         case UPDATE_VACANCY:
             return state.filter((vacancy) => vacancy.id !== action.data.id).concat(action.data)
         case DELETE_VACANCY:
-            return
+            return state.filter((vacancy) => vacancy.id !== action.id)
         default:
             return state;
     }

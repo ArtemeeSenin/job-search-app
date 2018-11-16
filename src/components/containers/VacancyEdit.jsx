@@ -18,7 +18,6 @@ const VacancyEdit = (props) => {
 
     }
     const deleteAction = (id) => {
-        console.log(id)
         dispatch(deleteVacancy(id));
         history.push('/rating')
     }
