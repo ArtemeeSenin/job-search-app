@@ -7,9 +7,7 @@ import SignIn from './components/containers/SignIn'
 import Logout from './components/containers/Logout'
 import SignUp from './components/containers/SignUp'
 import ResetPassword from './components/containers/ResetPassword'
-import Rating from './components/Rating'
-import Vacancy from './components/Vacancy'
-import Company from './components/Company'
+import Account from './components/Account'
 
 class App extends Component {
   constructor() {
@@ -37,14 +35,12 @@ class App extends Component {
               'container'
             )}>
               <Switch>
-                <Route exact path="/" component={ Rating } />
+                <Route exact path="/" component={ Account } />
                 <Route path="/sign-in" render={props => <SignIn onLogin={ this.login } />} />
                 <Route path="/logout" render={props => <Logout onLogout={ this.logout } />} />
                 <Route path="/sign-up" component={ SignUp } />
                 <Route path="/reset-password" component={ ResetPassword } />
-                <Route path="/rating" component={ Rating } />
-                <Route path="/account/vacancy" component={ Vacancy } />
-                <Route path="/account/company" component={ Company } />
+                <Route path="/account" component={ Account } />
                 <Route path="*" children={<div>Not Found</div>}
                 />
               </Switch>
