@@ -12,10 +12,10 @@ import AwesomeDebouncePromise from 'awesome-debounce-promise'
 const toNumber = value => parseInt(value);
 
 const searchAPI = text => fetch('https://autocomplete.clearbit.com/v1/companies/suggest?query=' + encodeURIComponent(text));
+const searchAPIDebounced = AwesomeDebouncePromise(searchAPI, 600);
 
 const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 const companyDescriptionAPI = name => fetch(proxyUrl + 'https://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=' + encodeURIComponent(name));
-const searchAPIDebounced = AwesomeDebouncePromise(searchAPI, 600);
 
 class VacancyForm extends Component {
     constructor(props){

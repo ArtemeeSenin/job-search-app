@@ -1,6 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Field, reduxForm } from 'redux-form'
+import {
+    required,
+    isEmail
+} from '../validation'
 import { Text } from '../fields'
 
 const SignInForm = (props) => {
@@ -13,6 +17,8 @@ const SignInForm = (props) => {
                 type="text"
                 label="Login"
                 placeholder="Your email address"
+                normalize={(str) => str.toLowerCase()}
+                validate={[required, isEmail]}
             />
             <Field
                 name="password"
@@ -20,6 +26,7 @@ const SignInForm = (props) => {
                 type="password"
                 label="Password"
                 placeholder=""
+                validate={[required]}
             />
             <Link to="/sign-reset" className="button button--hint">I can't log in</Link> <br />
             <button type="submit" className="button button--shadow">Log in</button>

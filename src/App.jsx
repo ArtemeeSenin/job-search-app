@@ -16,11 +16,13 @@ class App extends Component {
       // user: 'Artem'
     }
   }
-  login = (user) => {
+  login = (e) => {
+    console.log('login', e)
     // localStorage.setItem('user', JSON.stringify(user));
     // () => this.props.history.push('/account/rating')
   }
-  logout = () => {
+  logout = (e) => {
+    console.log('logout', e)
     // this.setState({ user: null }, () => this.props.history.push('/sign-in'))
   }
   render() {
@@ -42,7 +44,7 @@ class App extends Component {
                 <Route exact path="/" component={ Account } />
                 <Route path="/sign-in" render={props => <SignIn onLogin={ this.login } />} />
                 <Route path="/logout" render={props => <Logout onLogout={ this.logout } />} />
-                <Route path="/sign-up" component={ SignUp } />
+                <Route path="/sign-up" render={props => <SignUp onLogin={this.login} /> } />
                 <Route path="/reset-password" component={ ResetPassword } />
                 <Route path="/account" component={ Account } />
                 <Route path="*" children={<div>Not Found</div>}

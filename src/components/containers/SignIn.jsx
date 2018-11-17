@@ -12,7 +12,7 @@ class SignIn extends Component {
         this.onSubmit = this.onSubmit.bind(this)
     }
     onSubmit(e) {
-        this.props.onLogin()
+        this.props.onLogin(e)
     }
     render() {
         return (
