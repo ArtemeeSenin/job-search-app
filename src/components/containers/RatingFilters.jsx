@@ -21,7 +21,6 @@ class RatingFilters extends Component {
         }
     }
     useSuggestion(suggestion) {
-        console.log(suggestion)
         this.props.dispatch(change('filters', 'textFilter', suggestion))
         this.setState({ searchValue: '', textFilterOpened: false })
     }

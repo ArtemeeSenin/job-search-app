@@ -85,7 +85,6 @@ const RadioButton = props => {
 export const Radio = props => {
     const { label, radioName, meta } = props;
     const list = props.fields;
-    console.log(props.meta)
     return (
         <div className={cx(
             'text-input',

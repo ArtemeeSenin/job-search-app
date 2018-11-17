@@ -5,8 +5,13 @@ import { connect } from 'react-redux'
 import { addVacancy, updateVacancy, deleteVacancy } from '../../actions/vacancies'
 
 const VacancyEdit = (props) => {
-    const { history, match, dispatch } = props;
-    const data = props.vacancies.filter((vacancy) => { return vacancy.id === match.params.id })[0]
+    const { history, match, location, dispatch } = props;
+    let data;
+    if( !location.pathname.includes('add') ){
+        data = props.vacancies.filter((vacancy) => { return vacancy.id === match.params.id })[0];
+        data.workDay = data.workDay / 60;
+    }
+
     const submit = (values) => {
         console.log(JSON.stringify(values, null, 2))
 

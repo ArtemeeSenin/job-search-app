@@ -10,8 +10,9 @@ function generateUID() {
 
 export function addVacancy(data){
     data.id = generateUID();
-    data.companyDescription = '';
+    // data.companyDescription = '';
     data.companyCommentary = '';
+    data.workDay = data.workDay * 60;
 
     return {
         type: ADD_VACANCY,
@@ -20,6 +21,7 @@ export function addVacancy(data){
 }
 
 export function updateVacancy(data){
+    data.workDay = data.workDay * 60;
     return {
         type: UPDATE_VACANCY,
         data
