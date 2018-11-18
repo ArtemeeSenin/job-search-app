@@ -28,7 +28,7 @@ const SignInForm = (props) => {
                 placeholder=""
                 validate={[required]}
             />
-            <Link to="/sign-reset" className="button button--hint">I can't log in</Link> <br />
+            <Link to="/reset-password" className="button button--hint">I can't log in</Link> <br />
             <button type="submit" className="button button--shadow">Log in</button>
             <div className="sign__label-text">Don't have an account yet?</div>
             <Link to="/sign-up" className="button button--shadow">Sign up</Link>

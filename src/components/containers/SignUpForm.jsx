@@ -4,6 +4,7 @@ import { Field, reduxForm } from 'redux-form'
 import {
     required,
     matchesPassword,
+    strongPassword,
     isEmail
 } from '../validation'
 import { Text } from '../fields'
@@ -27,7 +28,7 @@ const SignUpForm = (props) => {
                 type="password"
                 label="Password"
                 placeholder=""
-                validate={[required]}
+                validate={[required, strongPassword]}
             />
             <Field
                 name="confirmPassword"

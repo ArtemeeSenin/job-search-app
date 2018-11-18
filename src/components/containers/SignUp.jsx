@@ -6,9 +6,7 @@ import SignUpForm from './SignUpForm'
 class SignUp extends Component {
     constructor() {
         super();
-        this.state = {
-
-        }
+        this.state = {}
         this.onSubmit = this.onSubmit.bind(this)
     }
     onSubmit(e) {
