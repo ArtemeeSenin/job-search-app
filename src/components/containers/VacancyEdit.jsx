@@ -12,8 +12,8 @@ const VacancyEdit = (props) => {
         if(data) data = { ...data, workDay: (data.workDay / 60)}
     }
     if( !data && !location.pathname.includes('add')){
-        history.push('/not-found');
-        return;
+        // history.push('/not-found');
+        return (<h2 style={{textAlign: 'center'}}>Loading..</h2>);
     }
 
     const submit = (values) => {
