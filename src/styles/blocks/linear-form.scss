@@ -4,4 +4,17 @@
     box-sizing: border-box;
     padding: $font-size-large $inner-container-padding;
     margin: 0 auto;
+
+    &__company-autocomplete {
+        margin: 0;
+        margin-bottom: var(--font-size-x-large);
+        padding: 0;
+        list-style: none;
+
+        &-item {
+            background: rgba(200,200,200,.3);
+            padding: 10px 10px 14px;
+            border-bottom: 1px solid  rgba(200,200,200,1);
+        }
+    }
 }

@@ -67,6 +67,7 @@ class VacancyForm extends Component {
                         label="Company"
                         placeholder="Company name"
                         inputModifiers="text-input__field--dark-border text-input__field--fw-normal"
+                        additionalClasses={['text-input--no-margin-bottom']}
                         validate={[required]}
                         onChange={ (e, value) => { if(value) this.handleTextChange(value) } }
                     />
@@ -79,6 +80,7 @@ class VacancyForm extends Component {
                                     this.props.dispatch(change('vacancy', 'company', el.name))
                                     this.props.dispatch(change('vacancy', 'companyLogo', el.logo))
                                     this.getCompanyDescription(el.name)
+                                    this.setState({companyNameAutocomplete: []})
                                 }}
                             >{el.name} | {el.domain}</li>
                         )}

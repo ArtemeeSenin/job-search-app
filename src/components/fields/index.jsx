@@ -7,10 +7,10 @@ import {
 } from '../validation'
 
 export const Text = props => {
-    const { label, placeholder, input, inputModifiers, type, meta } = props
+    const { label, placeholder, input, inputModifiers, type, meta, additionalClasses } = props
     return (
         <div className={cx(
-            'text-input',
+            `text-input ${additionalClasses || ''}`,
             {'text-input--error': (meta.error && meta.touched && !meta.active)}
         )}>
             <label className="text-input__label">

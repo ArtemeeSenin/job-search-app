@@ -27,6 +27,9 @@
             transform: scale(1);
         }
     }
+    &--no-margin-bottom {
+        margin-bottom: 0 !important;
+    }
 
     &--checkbox {
         margin-bottom: $font-size-regular;
