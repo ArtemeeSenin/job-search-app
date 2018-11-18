@@ -100,7 +100,7 @@ export function addVacancies(data) {
 }
 
 export function receiveVacancies(){
-    console.log('start receiving for ', localStorage.getItem('user'))
+    console.log('start receiving for ', JSON.parse(localStorage.getItem('user')))
     return (dispatch) => {
         db.collection('vacancies').where("author", "==", JSON.parse(localStorage.getItem('user')))
             .get()

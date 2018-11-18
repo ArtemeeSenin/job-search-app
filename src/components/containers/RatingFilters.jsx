@@ -112,7 +112,6 @@ class RatingFilters extends Component {
     }
 }
 function mapStateToProps(state){
-    console.log('STATE', state)
     if(state.vacancies.length)
         return {
             positions: state.vacancies.map((vacancy) => vacancy.position).sort(),

@@ -251,6 +251,7 @@
     .rating-filters {
         &__search {
             font-size: $font-size-medium;
+            width: 100%;
 
             &--is-active {
                 .rating-filters__dropdown-list {

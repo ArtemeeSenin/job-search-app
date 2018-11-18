@@ -5,7 +5,8 @@ import {
     required,
     matchesPassword,
     strongPassword,
-    isEmail
+    isEmail,
+    asyncValidateSignUp as asyncValidate
 } from '../validation'
 import { Text } from '../fields'
 
@@ -46,5 +47,7 @@ const SignUpForm = (props) => {
 }
 
 export default reduxForm({
-    form: 'signup'
+    form: 'signup',
+    asyncValidate,
+    asyncBlurFields: ['login']
 })(SignUpForm);

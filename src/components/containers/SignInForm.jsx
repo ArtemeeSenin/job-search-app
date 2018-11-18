@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import { Field, reduxForm } from 'redux-form'
 import {
     required,
-    isEmail
+    isEmail,
+    asyncValidateSignIn as asyncValidate
 } from '../validation'
 import { Text } from '../fields'
 
@@ -37,5 +38,7 @@ const SignInForm = (props) => {
 }
 
 export default reduxForm({
-    form: 'signin'
+    form: 'signin',
+    asyncValidate,
+    asyncBlurFields: ['password']
 })(SignInForm);

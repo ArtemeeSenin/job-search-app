@@ -20,7 +20,8 @@
         color: darken($color-error, 20);
 
         & .text-input__field {
-            color: darken($color-error, 20);
+            color: white;
+            border-color: darken($color-error, 10) !important;
         }
 
         .text-input__message {

@@ -23,16 +23,7 @@ class App extends Component {
     this.authListener = this.authListener.bind(this)
   }
   login = (e) => {
-    console.log('login', e)
-    firebase.auth().signInWithEmailAndPassword(e.login, e.password)
-      .then( (user) => {
-        console.log('authed as ', user.user.email)
-        // this.props.dispatch()
-        localStorage.setItem('user', JSON.stringify(user.user.email))
-        // console.log(localStorage.getItem('user'))
-      })
-      .then( () => this.props.history.push('/account/rating'))
-      .catch( (err) => console.log(err))
+    this.props.history.push('/account/rating')
   }
   signup = (e) => {
     console.log('signup', e)
