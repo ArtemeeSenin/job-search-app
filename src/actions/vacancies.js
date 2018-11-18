@@ -30,7 +30,6 @@ export function addVacancy(data){
                 createdAt: new Date()
             })
             .then( (res) => {
-                console.log('Added vacancy to db', res)
                 dispatch(addVacancyAction(data, res.id))
             })
             .catch( (err) => {
@@ -55,7 +54,6 @@ export function updateVacancy(data){
             ...data
         })
             .then((res) => {
-                console.log(res)
                 dispatch({
                     type: UPDATE_VACANCY,
                     data
@@ -79,7 +77,6 @@ export function deleteVacancy(id){
     return (dispatch) => {
         db.collection('vacancies').doc(id).delete()
             .then((res) => {
-                console.log(res)
                 dispatch(deleteVacancyAction(id))
             })
             .catch((err) => {
@@ -90,7 +87,6 @@ export function deleteVacancy(id){
 }
 
 export function addVacancies(data) {
-    console.log('set vacancies')
     return {
         type: RECEIVE_VACANCIES,
         data
@@ -105,9 +101,7 @@ export function receiveVacancies(){
             .get()
             .then(function(querySnapshot) {
                 let data = [];
-                console.log(querySnapshot)
                 querySnapshot.forEach(function(doc) {
-                    console.log(doc, doc.data());
                     data.push({
                         ...doc.data(),
                         id: doc.id

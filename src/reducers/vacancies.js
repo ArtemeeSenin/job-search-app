@@ -1,7 +1,6 @@
 import { ADD_VACANCY, UPDATE_VACANCY, DELETE_VACANCY, RECEIVE_VACANCIES, RESET_STORE_VACANCIES } from '../actions/vacancies';
 
 export default (state = [], action) => {
-    console.log('new action', action.data)
     switch (action.type) {
         case ADD_VACANCY:
             return state.concat(action.data);

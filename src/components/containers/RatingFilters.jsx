@@ -11,12 +11,10 @@ class RatingFilters extends Component {
     constructor(props){
         super(props);
         this.state = {
-            ...props.data,
+            ...props,
             statusFilterOpened: true,
             textFilterOpened: false,
             handleSubmit: props.handleSubmit,
-            postions: props.data.vacancies.map((vacancy) => vacancy.position).sort(),
-            companies: props.data.vacancies.map((vacancy) => vacancy.company).sort(),
             searchValue: ''
         }
     }
@@ -29,8 +27,9 @@ class RatingFilters extends Component {
         this.props.dispatch(setVisibilityFilterText(values.textFilter));
     }
     render() {
-        let vacanciesSuggestion = [], vacanciesSuggestionSet = new Set([...this.state.postions, ...this.state.companies]);
+        let vacanciesSuggestion = [], vacanciesSuggestionSet = new Set([...this.props.positions, ...this.props.companies]);
         vacanciesSuggestionSet.forEach( (el) => vacanciesSuggestion.push(el))
+        // TODO: console.log(this.props.companies, this.state.companies, vacanciesSuggestion, vacanciesSuggestionSet)
 
         return (
             <div className="rating-filters">
@@ -46,9 +45,6 @@ class RatingFilters extends Component {
                                 onChange={(e, value) => {
                                     this.setState({ searchValue: value, textFilterOpened: true})
                                 }}
-                                // onBlur={ () => {
-                                //     this.setState({ textFilterOpened: false })
-                                // }}
                             />
                             <i className="fal fa-search"></i>
                         </div>
@@ -115,8 +111,21 @@ class RatingFilters extends Component {
         )
     }
 }
-
-export default connect()(reduxForm({
+function mapStateToProps(state){
+    console.log('STATE', state)
+    if(state.vacancies.length)
+        return {
+            positions: state.vacancies.map((vacancy) => vacancy.position).sort(),
+            companies: state.vacancies.map((vacancy) => vacancy.company).sort()
+        }
+    else {
+        return {
+            positions: [],
+            companies: []
+        }
+    }
+}
+export default connect(mapStateToProps)(reduxForm({
     form: 'filters',
     destroyOnUnmount: false
 })(RatingFilters));

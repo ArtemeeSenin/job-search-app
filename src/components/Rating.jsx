@@ -5,7 +5,7 @@ import RatingTable from './containers/RatingTable';
 
 const Rating = (props) => (
     <div className="rating">
-        <RatingFilters data={props}/>
+        <RatingFilters />
         <RatingTable data={props}/>
     </div>
 )
