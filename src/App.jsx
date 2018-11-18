@@ -11,7 +11,7 @@ import ResetPassword from './components/containers/ResetPassword'
 import Account from './components/Account'
 import NotFound from './components/containers/NotFound'
 import firebase from './firebase'
-import { receiveVacancies, getVacancies } from './actions/vacancies'
+import { receiveVacancies, resetStoreVacancies } from './actions/vacancies'
 
 class App extends Component {
   constructor(props) {
@@ -49,6 +49,7 @@ class App extends Component {
     firebase.auth().signOut()
       .then( () => {
         localStorage.removeItem('user')
+        this.props.dispatch(resetStoreVacancies())
         this.props.history.push('/sign-in')
       })
   }

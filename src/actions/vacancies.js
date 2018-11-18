@@ -5,7 +5,13 @@ export const ADD_VACANCY = 'ADD_VCANCY';
 export const UPDATE_VACANCY = 'UPDATE_VACANCY';
 export const DELETE_VACANCY = 'DELETE_VACANCY'
 export const RECEIVE_VACANCIES = 'RECEIVE_VACANCIES';
+export const RESET_STORE_VACANCIES = 'RESET_STORE_VACANCIES'
 
+export function resetStoreVacancies(){
+    return {
+        type: RESET_STORE_VACANCIES
+    }
+}
 function addVacancyAction(data, id){
     return {
         type: ADD_VACANCY,
