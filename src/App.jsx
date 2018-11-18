@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import cx from 'classnames'
 // import PrivateRoute from './components/containers/PrivateRoute'
@@ -9,6 +9,7 @@ import Logout from './components/containers/Logout'
 import SignUp from './components/containers/SignUp'
 import ResetPassword from './components/containers/ResetPassword'
 import Account from './components/Account'
+import NotFound from './components/containers/NotFound'
 import firebase from './firebase'
 
 class App extends Component {
@@ -67,13 +68,13 @@ class App extends Component {
         { locationPath.includes('account') ? <NavMenu /> : null}
           <main className={cx(
             'page-content',
-          { 'page-content--background': !locationPath.includes('account')},
+          { 'page-content--background': !locationPath.includes('account') && !locationPath.includes('not-found')},
           // { 'page-content--bg-variation-light': locationPath.includes('sign-in')},
-          { 'page-content--vertical-fields': !locationPath.includes('account')}
+          { 'page-content--vertical-fields': !locationPath.includes('account') && !locationPath.includes('not-found')}
           )}>
             <div className={cx(
               'container',
-            { 'container--vertical-padding': !locationPath.includes('account') }
+            { 'container--vertical-padding': !locationPath.includes('account') && !locationPath.includes('not-found') }
             )}>
               <Switch>
                 <Route exact path="/" component={ Account } />
@@ -82,8 +83,8 @@ class App extends Component {
                 <Route path="/sign-up" render={props => <SignUp onLogin={this.signup} /> } />
                 <Route path="/reset-password" render={ props => <ResetPassword onResetPassword={this.resetPassword} />} />
                 <Route path="/account" component={ Account } />
-                <Route path="*" children={<div>Not Found</div>}
-                />
+                <Route path="/not-found" component={ NotFound }/>
+                <Route path="*" component={ NotFound }/>
               </Switch>
             </div>
           </main>

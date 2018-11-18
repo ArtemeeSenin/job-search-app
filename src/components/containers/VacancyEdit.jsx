@@ -6,10 +6,14 @@ import { addVacancy, updateVacancy, deleteVacancy } from '../../actions/vacancie
 
 const VacancyEdit = (props) => {
     const { history, match, location, dispatch } = props;
-    let data;
+    let data = null;
     if( !location.pathname.includes('add') ){
         data = props.vacancies.filter((vacancy) => { return vacancy.id === match.params.id })[0];
-        data.workDay = data.workDay / 60;
+        data.workDay =  data && data.workDay? (data.workDay / 60) : null;
+    }
+    if( !data && !location.pathname.includes('add')){
+        history.push('/not-found');
+        return;
     }
 
     const submit = (values) => {

@@ -19,6 +19,11 @@ class VacancyCard extends Component {
     render() {
         const data = this.state.vacancy;
         const features = [];
+        if( !data ){
+            this.props.history.push('/not-found');
+            return;
+        }
+
         if (data.workDay) features.push({ type: 'clock', text: Math.ceil(data.workDay / 60) + 'h. work day'})
         if (data.inTheWay) features.push({type: 'bus', text: data.inTheWay + 'm. in the way'})
         if (data.isInteresting) features.push({type: data.isInteresting ? 'smile' : 'frown', text: 'Is interesting'})
