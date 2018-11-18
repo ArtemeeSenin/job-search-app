@@ -9,7 +9,7 @@
     top: 100%; left: 0;
     width: 100%;
     box-sizing: border-box;
-    margin: 0;    
+    margin: 0;
     padding: 0 $inner-container-padding-top;
     padding-bottom: 10px;
     background-color: inherit;
@@ -23,7 +23,7 @@
 
     &__item {
         &-link {
-            display: block;         
+            display: block;
             padding: 14px 0;
             color: $color-text-primary-inverse;
             text-decoration: none;
@@ -48,15 +48,30 @@
 
         &__item {
             flex: 0 0 auto;
+            padding-left: $font-size-small;
+            position: relative;
+
+            &--divide {
+                margin-left: $font-size-x-large !important;
+                &::before {
+                    content: '';
+                    border-left: 1px solid currentColor;
+                    position: absolute;
+                    top: 13px;
+                    left: -7px;
+                    height: 22px;
+                }
+            }
         }
 
+
         &__item + &__item {
-            margin-left: $font-size-large;
+            margin-left: $font-size-small;
         }
     }
 }
-@media screen and (min-width: $breakpoint-l) {
-    .nav-list {
-        justify-content: flex-start;
-    }
-}
+// @media screen and (min-width: $breakpoint-l) {
+//     .nav-list {
+//         justify-content: flex-start;
+//     }
+// }
