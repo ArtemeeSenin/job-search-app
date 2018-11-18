@@ -3,7 +3,6 @@ import { Field } from 'redux-form'
 import capitalize from 'capitalize'
 import cx from 'classnames'
 import {
-    required,
     requiredRadio
 } from '../validation'
 

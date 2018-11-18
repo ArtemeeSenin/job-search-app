@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Route, Switch, withRouter, Link } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'
 import cx from 'classnames'
 import PrivateRoute from './components/containers/PrivateRoute'

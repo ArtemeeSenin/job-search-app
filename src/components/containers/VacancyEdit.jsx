@@ -9,7 +9,7 @@ const VacancyEdit = (props) => {
     let data = null;
     if( !location.pathname.includes('add') ){
         data = props.vacancies.filter((vacancy) => { return vacancy.id === match.params.id })[0];
-        data.workDay =  data && data.workDay? (data.workDay / 60) : null;
+        if(data) data = { ...data, workDay: (data.workDay / 60)}
     }
     if( !data && !location.pathname.includes('add')){
         history.push('/not-found');
