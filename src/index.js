@@ -7,9 +7,9 @@ import middleware from './middleware'
 import { Provider } from 'react-redux'
 import './index.scss'
 import App from './App';
-import initialState from './index.json';
+// import initialState from './index.json';
 
-let store = createStore(reducer, initialState, middleware);
+let store = createStore(reducer, middleware);
 
 ReactDOM.render(
     <Provider store={store}>

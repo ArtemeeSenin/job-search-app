@@ -1,4 +1,4 @@
-console.log('So glad to see you here! Let\'s rock!');
+// console.log('So glad to see you here! Let\'s rock!');
 
 // fetch('/rest/enter')
 //     .then((data) => data.json())
@@ -23,19 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* Button read-more */
     // Temporary variant
-    try {
-        const cardInfoDescription = document.querySelector('.card-info__description');
-        cardInfoDescription.addEventListener('click', (e) => {
-            e.currentTarget.classList.toggle('card-info__description--is-active')
-        })
+    // try {
+    //     const cardInfoDescription = document.querySelector('.card-info__description');
+    //     cardInfoDescription.addEventListener('click', (e) => {
+    //         e.currentTarget.classList.toggle('card-info__description--is-active')
+    //     })
 
-        const cardInfoComment = document.querySelector('.card-info__comment');
-        cardInfoComment.addEventListener('click', (e) => {
-            e.currentTarget.classList.toggle('card-info__comment--is-active')
-        })
-    } catch {
-        console.log('not this page');
-    }
+    //     const cardInfoComment = document.querySelector('.card-info__comment');
+    //     cardInfoComment.addEventListener('click', (e) => {
+    //         e.currentTarget.classList.toggle('card-info__comment--is-active')
+    //     })
+    // } catch {
+    //     console.log('not this page');
+    // }
     // try{
     //     const ratingTable = document.querySelector('.rating-table');
     //     ratingTable.addEventListener('click', (e) => {

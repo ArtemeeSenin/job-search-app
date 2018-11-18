@@ -5,7 +5,6 @@ import RatingTableVacancy from './RatingTableVacancy';
 
 const RatingTable = (props) => {
     const { vacancies, visibilityFilter } = props.data;
-
     return (
         <div className="rating-table">
             <table className="rating-table__table">

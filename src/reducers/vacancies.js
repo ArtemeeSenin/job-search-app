@@ -1,6 +1,7 @@
-import { ADD_VACANCY, UPDATE_VACANCY, DELETE_VACANCY } from '../actions/vacancies';
+import { ADD_VACANCY, UPDATE_VACANCY, DELETE_VACANCY, RECEIVE_VACANCIES } from '../actions/vacancies';
 
 export default (state = [], action) => {
+    console.log('new action', action.data)
     switch (action.type) {
         case ADD_VACANCY:
             return state.concat(action.data);
@@ -8,6 +9,8 @@ export default (state = [], action) => {
             return state.filter((vacancy) => vacancy.id !== action.data.id).concat(action.data)
         case DELETE_VACANCY:
             return state.filter((vacancy) => vacancy.id !== action.id)
+        case RECEIVE_VACANCIES:
+            return state.concat(action.data);
         default:
             return state;
     }

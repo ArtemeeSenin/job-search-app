@@ -11,6 +11,7 @@ import ResetPassword from './components/containers/ResetPassword'
 import Account from './components/Account'
 import NotFound from './components/containers/NotFound'
 import firebase from './firebase'
+import { receiveVacancies, getVacancies } from './actions/vacancies'
 
 class App extends Component {
   constructor(props) {
@@ -54,6 +55,9 @@ class App extends Component {
   authListener = (e) => {
     firebase.auth().onAuthStateChanged( (user) => {
       console.log('auth changed', user)
+      if(user){
+        this.props.dispatch(receiveVacancies())
+      }
     })
   }
   resetPassword = (e) => {

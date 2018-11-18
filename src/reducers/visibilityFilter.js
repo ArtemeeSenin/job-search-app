@@ -1,6 +1,9 @@
 import { SET_VISIBILITY_FILTER_STATUS, SET_VISIBILITY_FILTER_TEXT } from '../actions/visibilityFilter'
-
-export default (state = {}, action) => {
+const initialState = {
+        text: '',
+        status: []
+    };
+export default (state = initialState, action) => {
     switch (action.type) {
         case SET_VISIBILITY_FILTER_STATUS:
             return {
