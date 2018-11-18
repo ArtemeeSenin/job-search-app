@@ -34,10 +34,12 @@ class VacancyForm extends Component {
         const result = await companyDescriptionAPI(name);
         const data = await result.json()
         let description = '';
-        for( let k in data.query.pages){
-            description += data.query.pages[k].extract
+        const pages = data.query.pages;
+        for (let k in pages){
+            description += pages[k].extract ? pages[k].extract : ''
         }
         this.props.dispatch(change('vacancy', 'companyDescription', description))
+
     }
     componentWillUnmount() {
         this.setState = () => { };
@@ -142,6 +144,15 @@ class VacancyForm extends Component {
                         cols="45"
                         inputModifiers="text-input__field--dark-border text-input__field--fw-normal text-input__field--area"
                         validate={[required]}
+                    />
+                    <Field
+                        name="companyCommentary"
+                        component={Textarea}
+                        label="Commentary about company"
+                        placeholder="About the conditions, office, etc."
+                        rows="2"
+                        cols="45"
+                        inputModifiers="text-input__field--dark-border text-input__field--fw-normal text-input__field--area"
                     />
                     <FieldArray
                         label="Status"
