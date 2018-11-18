@@ -13,10 +13,14 @@ export function resetStoreVacancies(){
     }
 }
 function addVacancyAction(data, id){
+    console.log('action', data, id)
     return {
         type: ADD_VACANCY,
-        data,
-        id
+        data: {
+            ...data,
+            author: JSON.parse(localStorage.getItem('user')),
+            id
+        }
     }
 }
 
@@ -30,6 +34,7 @@ export function addVacancy(data){
                 createdAt: new Date()
             })
             .then( (res) => {
+                console.log(res, res.id)
                 dispatch(addVacancyAction(data, res.id))
             })
             .catch( (err) => {

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import cx from 'classnames'
 import FeatureList from './FeatureList';
 
+function createMarkup(markup) { return { __html: markup }; };
+
 class CardContent extends Component {
     constructor(){
         super();
@@ -25,9 +27,7 @@ class CardContent extends Component {
                     onClick={() => this.setState({commentToggled: !this.state.commentToggled})}
                 >
                     <h3 className="heading heading--large">Personal commentary</h3>
-                    <div className="card-info__comment-text">
-                        { data.commentary }
-                    </div>
+                    <div className="card-info__comment-text" dangerouslySetInnerHTML={createMarkup(data.commentary)}/>
                 </section>
                 { features
                     ? <section className="card-info__conditions">
@@ -43,9 +43,7 @@ class CardContent extends Component {
                     onClick={() => this.setState({descriptionToggled: !this.state.descriptionToggled})}
                     >
                     <h3 className="heading heading--large">Job description</h3>
-                    <div className="card-info__description-text">
-                        { data.description }
-                    </div>
+                    <div className="card-info__description-text" dangerouslySetInnerHTML={createMarkup(data.description)} />
                 </section>
             </div>
         )
