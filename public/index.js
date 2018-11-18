@@ -5,21 +5,21 @@
 //     .then((msg) => console.log(msg.message))
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    /* Burger */
-    const hamburger = document.querySelector('.hamburger');
-    hamburger.addEventListener('click', (e) => {
-        e.stopPropagation();
-        hamburger.classList.toggle('is-active');
-        document.body.classList.toggle('is-menu-active');
-    })
-    document.body.addEventListener('click', (e) => {
-        if (document.body.classList.contains('is-menu-active') && !e.target.classList.contains('nav-list__item-link')){
-            e.stopPropagation();
-            hamburger.classList.toggle('is-active');
-            document.body.classList.toggle('is-menu-active');
-        }
-    })
+// document.addEventListener('DOMContentLoaded', () => {
+//     /* Burger */
+//     const hamburger = document.querySelector('.hamburger');
+//     hamburger.addEventListener('click', (e) => {
+//         e.stopPropagation();
+//         hamburger.classList.toggle('is-active');
+//         document.body.classList.toggle('is-menu-active');
+//     })
+//     document.body.addEventListener('click', (e) => {
+//         if (document.body.classList.contains('is-menu-active') && !e.target.classList.contains('nav-list__item-link')){
+//             e.stopPropagation();
+//             hamburger.classList.toggle('is-active');
+//             document.body.classList.toggle('is-menu-active');
+//         }
+//     })
 
     /* Button read-more */
     // Temporary variant
@@ -142,4 +142,4 @@ document.addEventListener('DOMContentLoaded', () => {
     //         block.classList.add('comment-toggling--no-action')
     //     }
     // })
-});
+// });

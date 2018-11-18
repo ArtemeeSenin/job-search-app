@@ -1,6 +1,12 @@
 .rating-table {
     color: $color-text-primary-weak;
 
+    &__add-new-hint {
+        color: #69C7AD;
+        display: block;
+        text-decoration: underline;
+        font-size: .94em;
+    }
     &__table {
         width: 100%;
         max-width: 100%;
@@ -26,6 +32,13 @@
 }
 
 
+@media screen and (min-width: $breakpoint-m) {
+    .rating-table {
+        &__add-new-hint {
+            display: inline;
+        }
+    }
+}
 @media screen and (min-width: $breakpoint-xl) {
     .rating-table {
         max-width: 890px;

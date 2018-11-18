@@ -28,7 +28,7 @@ const RatingTable = (props) => {
             {vacancies.length === 0 ?
                 <>
                     <h2 style={{ textAlign: 'center' }}>Can't seem to find any vacancies yet</h2>
-                    <h3 style={{ textAlign: 'center' }}>Go ahead and <Link to="/account/vacancy/add" style={{ textDecoration: 'underiline', color: '#69C7AD' }}>add a new vacancy</Link> right now!</h3>
+                    <h3 style={{ textAlign: 'center' }}>Go ahead and <Link to="/account/vacancy/add" className="rating-table__add-new-hint">add new vacancy</Link> right now!</h3>
                 </>
                 :
                 null
