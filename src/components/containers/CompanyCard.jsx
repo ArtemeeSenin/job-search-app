@@ -5,14 +5,10 @@ import CardHeader from './CardHeader'
 import CardContent from './CompanyCardContent'
 
 class CompanyCard extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            vacancy: props.vacancies.filter((vacancy) => { return vacancy.id === props.match.params.id })[0]
-        }
-    }
     render() {
-        const data = this.state.vacancy;
+        const data =  this.props.vacancy
+        if(!data) return (<h2 style={{textAlign: 'center'}}>Loading..</h2>);
+
         return (
             <article className="card-info">
                 <CardHeader data={{ pageName: data.company }} />
@@ -21,6 +17,7 @@ class CompanyCard extends Component {
                     <div className="card-info__footer-buttons-container">
                         <Link className="button" to='/account/rating'>See rating</Link>
                         <Link className="button" to={`/account/vacancy/edit/${data.id}`}>Edit</Link>
+                        <Link className="button" to={`/account/vacancy/${data.id}`}>See Vacancy</Link>
                     </div>
                 </footer>
             </article>
@@ -28,10 +25,11 @@ class CompanyCard extends Component {
     }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
     const { vacancies, dispatch } = state;
+    const vacancy = vacancies.filter((vacancy) => { return vacancy.id === ownProps.match.params.id })[0];
     return {
-        vacancies,
+        vacancy,
         dispatch
     };
 }

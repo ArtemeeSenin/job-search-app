@@ -215,6 +215,17 @@
             display: flex;
             justify-content: space-between;
 
+            &-vacancy {
+                margin-bottom: 0.1em;
+
+                &-position {
+                    margin-bottom: 0;
+                }
+                &-company {
+                    margin-top: 0.35em;
+                }
+            }
+
             &-salary {
                 &-amount {
                     &-number {

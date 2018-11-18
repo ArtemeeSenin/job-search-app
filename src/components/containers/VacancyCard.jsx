@@ -6,22 +6,23 @@ import CardContent from './CardContent'
 import { deleteVacancy } from '../../actions/vacancies'
 
 class VacancyCard extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            vacancy: props.vacancies.filter((vacancy) => { return vacancy.id === props.match.params.id })[0]
-        }
-    }
+    // shouldComponentUpdate(nextProps, nextState){
+    //     if(nextProps.vacancies.length !== this.props.vacancies.length){
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
     deleteAction(id){
         this.props.dispatch(deleteVacancy(id));
         this.props.history.push('/account/rating')
     }
     render() {
-        const data = this.state.vacancy;
+        const data = this.props.vacancy
         const features = [];
         if( !data ){
-            this.props.history.push('/not-found');
-            return;
+            // this.props.history.push('/not-found');
+            return (<h2 style={{textAlign: 'center'}}>Loading..</h2>);
         }
 
         if (data.workDay) features.push({ type: 'clock', text: Math.ceil(data.workDay / 60) + 'h. work day'})
@@ -45,10 +46,11 @@ class VacancyCard extends Component {
     }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
     const { vacancies, dispatch } = state;
+    const vacancy = vacancies.filter((vacancy) => { return vacancy.id === ownProps.match.params.id })[0];
     return {
-        vacancies,
+        vacancy,
         dispatch
     };
 }
