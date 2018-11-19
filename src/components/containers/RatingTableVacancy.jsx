@@ -11,6 +11,12 @@ class RatingTableVacancy extends Component{
         }
     }
 
+    stripTags(code){
+        const div = document.createElement("div");
+        div.innerHTML = code;
+        return div.innerText;
+    }
+
     render(){
         const { data } = this.props;
         return (
@@ -66,7 +72,7 @@ class RatingTableVacancy extends Component{
                                         'comment-toggling--one-line',
                                         {'comment-toggling--is-active': this.state.commentaryIsActive}
                                     )}>
-                                        <p className="comment-toggling__text">{data.commentary}</p>
+                                        <p className="comment-toggling__text">{this.stripTags(data.commentary)}</p>
                                     </div>
                                 </div>
                             ) : null
