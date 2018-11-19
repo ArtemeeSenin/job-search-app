@@ -1,5 +1,4 @@
 .card-info {
-    margin-top: 110px;
     background-color: $color-background-primary-inverse;
     color: $color-text-primary-weak;
     box-shadow:
@@ -312,5 +311,10 @@
             grid-column-gap: 60px; column-gap: 60px;
 
         }
+    }
+}
+@media screen and (min-width: $breakpoint-xl) {
+    .card-info {
+        margin-top: 110px;
     }
 }

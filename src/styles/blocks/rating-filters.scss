@@ -289,36 +289,36 @@
         }
 
         &__search {
-            font-size: $font-size-medium;
+            font-size: $font-size-regular;
             margin-bottom: 0;
 
             &-line-input {
                 height: 45px;
-                padding: 9px 15px 12px 15px;
+                padding: 13px 15px 12px 15px;
                 box-sizing: border-box;
             }
 
             &--is-active {
                 .rating-filters__dropdown-list {
-                    font-size: $font-size-medium;
+                    font-size: $font-size-regular;
                 }
             }
         }
         &__statuses {
             max-width: 250px;
-            font-size: $font-size-medium;
+            font-size: $font-size-regular;
             margin-bottom: 0;
 
             &-text {
                 height: 45px;
-                padding: 9px 15px 12px 15px;
+                padding: 13px 15px 12px 15px;
                 box-sizing: border-box;
             }
 
             &--is-active {
                 .rating-filters__dropdown-list {
                     position: absolute;
-                    font-size: $font-size-medium;
+                    font-size: $font-size-regular;
                 }
             }
         }
