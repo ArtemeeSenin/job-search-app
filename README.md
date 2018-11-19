@@ -1,44 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Find work
+## Job search management application
 
-## Available Scripts
+This SPA is made for simplifying vacancies comparison. While searching the ideal job, it is common to write vacancies down on paper.
 
-In the project directory, you can run:
+But after some time this notes are somewhere on separate papers, something is changing like salary or your personal opinion about this company or vacancy. Later you can get offer or refusal.
 
-### `npm start`
+The application allows you to organize your job search: choose the most interesting jobs, weed out the wrong options.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Business stories
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+User of this application can get personal account where he can add his vacancies for future comparing.
 
-### `npm test`
+The main comparison option is rating. The table with the rating of vacancies allows you to group vacancies by status, highlight interesting and the most profitable in terms of time spent and wages.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Comparison table of vacancies allows in addition to sort, filter jobs according to their status: an offer, the candidate is not interested, declined. There is also a text filter by job title or company.
 
-### `npm run build`
+Vacancies can be added from special form, where user needs to fill in necessary data for each vacancy.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+While using this application it is possible to add new vacancies; update vacancies: update status, change salary, or specify vacancy description; or remove remove irrelevant vacancies.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Technical solution
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+For this SPA design as a front-end library was used React with Redux for state management.
 
-### `npm run eject`
+Vacany and user data is stored in Firebase, also this service provides authentication methods.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+On the server side as a proxy web-server is used Nginx, and for serving the React application is used Node.js with express framework.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Known issues
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Flat structure of the database, companies and vacancies are stored in a single document
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Further development
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[ ] - Add vacancies from hh.ru link
