@@ -3,10 +3,7 @@ import { reduxForm } from 'redux-form'
 import CardHeader from './CardHeader'
 import { Field, FieldArray, change } from 'redux-form'
 import { Text, Textarea, Checkbox, Radio } from '../fields'
-import {
-    required,
-    requiredRadio
-} from '../validation'
+import { required, requiredRadio, requiredNumber } from "../validation";
 import AwesomeDebouncePromise from 'awesome-debounce-promise'
 
 const toNumber = value => parseInt(value);
@@ -93,7 +90,7 @@ class VacancyForm extends Component {
                         placeholder="Salary amount"
                         inputModifiers="text-input__field--dark-border text-input__field--fw-normal"
                         normalize={toNumber}
-                        validate={[required]}
+                        validate={[requiredNumber]}
                     />
                     <Field
                         name="workDay"
@@ -103,7 +100,7 @@ class VacancyForm extends Component {
                         placeholder="The duration of the working day"
                         inputModifiers="text-input__field--dark-border text-input__field--fw-normal"
                         normalize={toNumber}
-                        validate={[required]}
+                        validate={[requiredNumber]}
                     />
                     <Field
                         name="inTheWay"
@@ -113,7 +110,7 @@ class VacancyForm extends Component {
                         placeholder="Minutes"
                         inputModifiers="text-input__field--dark-border text-input__field--fw-normal"
                         normalize={ toNumber }
-                        validate={[required]}
+                        validate={[requiredNumber]}
                     />
                     <Field
                         name="description"

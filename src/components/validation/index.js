@@ -4,6 +4,12 @@ const auth = firebase.auth;
 export const required = value =>
     value ? undefined : 'Value is required'
 
+export const requiredNumber = value => {
+    console.log(value, Number(value))
+    const convertedValue = Number(value)
+    return convertedValue === convertedValue ? undefined : "Value is required";
+}
+
 export const requiredRadio = (value, allValues) => {
     return allValues.status ? undefined : 'Value is required'
 }
