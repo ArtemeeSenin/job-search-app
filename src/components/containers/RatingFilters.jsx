@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { reduxForm, change } from 'redux-form'
-import { Field, FormSection } from 'redux-form'
+import { reduxForm, change, Field, FormSection, reset } from "redux-form";
 import cx from 'classnames'
 import { FilterCheckbox, Search } from '../fields'
 import { setVisibilityFilterStatus, setVisibilityFilterText } from '../../actions/visibilityFilter'
@@ -25,6 +24,12 @@ class RatingFilters extends Component {
     onSubmit = (values) => {
         this.props.dispatch(setVisibilityFilterStatus(values.status));
         this.props.dispatch(setVisibilityFilterText(values.textFilter));
+    }
+    resetFilters = () => {
+        this.props.dispatch(reset("filters", false, false, [
+            "textFilter",
+            'status'
+          ]));
     }
     render() {
         let vacanciesSuggestion = [], vacanciesSuggestionSet = new Set([...this.props.positions, ...this.props.companies]);
@@ -106,6 +111,7 @@ class RatingFilters extends Component {
                         </ul>
                     </div>
                     <button className="rating-filters__filter-button button button--ghost" type="submit">Filter</button>
+                    <button className="rating-filters__filter-button button button--ghost" onClick={this.resetFilters}>Reset</button>
                 </form>
             </div>
         )
