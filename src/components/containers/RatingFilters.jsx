@@ -12,7 +12,7 @@ class RatingFilters extends Component {
         super(props);
         this.state = {
             ...props,
-            statusFilterOpened: true,
+            statusFilterOpened: false,
             textFilterOpened: false,
             handleSubmit: props.handleSubmit,
             searchValue: ''
