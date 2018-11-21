@@ -33,4 +33,6 @@ Flat structure of the database, companies and vacancies are stored in a single d
 
 ## Further development
 
-[ ] - Add vacancies from hh.ru link
+- [ ] Add vacancies from hh.ru link
+- [ ] DB structure for companies
+- [ ] Eneter app withour login and store data in localstorage until user is signed up
